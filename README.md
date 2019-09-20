@@ -49,7 +49,7 @@ Mail: milena_laistseva@mail.ru
 
 5. [Моисеева Вероника](https://github.com/vrnchk) — Frontend + UI/UX
 
-Студентка 3 курса, группа 16.Б12-пу
+Студентка 3 курса, группа 17.Б12-пу
 
 [VK](https://vk.com/nika146) &nbsp; | &nbsp; [GitHub](https://github.com/vrnchk)
 
