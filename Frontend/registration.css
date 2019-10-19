@@ -1,0 +1,102 @@
+.leftside,
+.rightside {
+  height: 100vh;
+  width: 100%;
+}
+
+.leftside {
+  background-color: #f7f7f7;
+}
+
+.rightside {
+  display: block;
+  background: url("https://lh3.googleusercontent.com/0MgdVQxquIABNkoP24wSAuclmkVjmX9KgUaEnP_458SnEH4dd4jRBYC71ctQ7M27e0dxPKHvDKohy8qKJtGy7zmGKRG9Cx9EoWKK015y-N5BZoOAZ9FBHwWExsbVqlbT4Cf1jbHpQSiKkfIdMTHTVunuPU6zqNN3Yqh9TuzhgYdsINC9vig6nKqFkID15Mxmb6vHltYfvkJg7AhdHO8DfnAWT9FYwBoQXrhUKkxahAJRKSDLm2PZClcRVqBrrFlAVHbS-Qc6dGgffKNF8srupB3KXZDXTjlbXguEMgHMspXi78wI2jZ1iX3RSjoShOJT5HtCrah9YPoG_ShHSsgNYOLgeTPNvqC2NxFEkGLSuHAmOWAB1yUqHWYQl4NhI2h2fLdhXxG69WQ7Pg6VdI0W3aRrAvxSblKYf4ZMq4YB6gzkFM7pk6W1kIZkYPP3Eh68W7rgwuqkkBhUhquVQkgk4vRcv-Se6rjecx7AEftKKdV8qGfdBTyo_qvWqXrY0gdqyrH51zg9DHonV0nw2f0G3aSqGlzlhiqTkbeSYvq6NEyvG_B40AGjd5h_LyvhEq8Dy56LUu6NGWSSbsXLNsMJi2STu4hxOqZgvbT9-wJnrjF6ChhPOpg0GZ5CDgKWBk_WVGNJN0s_LcFYLgZxSbi9yThMulKMSoDu0569siqPxkzImOtHhMjaomY=w1246-h937-no");
+  background-size: 120%;
+  background-repeat: repeat-x;
+  background-position: center;
+  
+  background-color: #f7f7f7;
+  width: 100%;
+}
+
+.form-container {
+  background-color: #fff;
+  max-width: 80%;
+  max-width: 800px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+input {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    padding: 20px 0px;
+    border: none;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    width: 90%;
+    box-sizing: border-box;
+    color: #000;
+    font-weight: 400;
+    -webkit-appearance: none;
+}
+
+input:focus {
+    border-bottom: solid 1px #39b8d1;
+    outline: 0;
+    box-shadow: 0 2px 6px -8px rgba(182, 157, 230, 0.45);
+}
+
+.my_btn {
+    display: block;
+    margin: 0 auto;
+    width: 450px;
+    height: 60px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border: 2px solid #39b8d1;
+    font-weight: bold;
+    background-color: #41cee9;
+}
+
+.my_btn:hover {
+    background-color: #39b8d1;;
+}
+
+.enter {
+    color: #41cee9;
+}
+
+.enter:hover {
+    color: #39b8d1;
+
+}
+
+.text_success {
+    color: #39b8d1;
+}
+
+@media (max-width: 800px) {
+    .rightside {
+        display: none !important;
+      }
+    .form-container {
+        max-width: 90%;
+        max-height: 90%;
+        box-shadow: none;
+    }
+    .form__heading {
+        font-size: 24px;
+    }
+    .my_btn {
+        width: 80%;
+    }
+    .leftside {
+      background-color: #fff;
+    }
+  }
+  
