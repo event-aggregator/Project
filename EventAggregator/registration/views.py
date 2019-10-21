@@ -1,10 +1,20 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.contrib import messages
 import bcrypt
-from .models import User
+from database.models import Client as User
+
 
 def index(request):
-    return render(request, 'registration/index.html')
+    return render(request, 'registration/autho.html')
+
+
+def gologin(request):
+    return render(request, 'registration/autho.html')
+
+
+def goregister(request):
+    return render(request, 'registration/registration.html')
+
 
 def register(request):
     errors = User.objects.validator(request.POST)
@@ -14,24 +24,24 @@ def register(request):
         return redirect('/')
 
     hashed_password = bcrypt.hashpw(request.POST['password'].encode(), bcrypt.gensalt())
-    # hashed_password = bcrypt.generate_password_hash(
-    #     request.form['password']
-    # ).decode('utf-8')
     user = User.objects.create(first_name=request.POST['first_name'], last_name=request.POST['last_name'], password=hashed_password.decode('utf-8'), email=request.POST['email'])
     user.save()
-    request.session['id'] = user.id
+    request.session['email'] = user.email
     return redirect('/success')
 
+
 def login(request):
-    if (User.objects.filter(email=request.POST['login_email']).exists()):
-        user = User.objects.filter(email=request.POST['login_email'])[0]
-        if (bcrypt.checkpw(request.POST['login_password'].encode(), user.password.encode())):
-            request.session['id'] = user.id
+    print(request.POST['email'])
+    if User.objects.filter(email=request.POST['email']).exists():
+        user = User.objects.filter(email=request.POST['email'])[0]
+        if bcrypt.checkpw(request.POST['password'].encode(), user.password.encode()):
+            request.session['email'] = user.email
             return redirect('/success')
     return redirect('/')
 
+
 def success(request):
-    user = User.objects.get(id=request.session['id'])
+    user = User.objects.get(email=request.session['email'])
     context = {
         "user": user
     }
