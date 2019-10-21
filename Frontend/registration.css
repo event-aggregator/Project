@@ -72,7 +72,7 @@ input:focus {
     cursor: pointer;
     margin-bottom: 10px;
     margin-top: 10px;
-    border: 2px solid #39b8d1;
+    border: 2px solid #217cd7;
     font-weight: bold;
     background-color: #217cd7;
 }
@@ -82,16 +82,16 @@ input:focus {
 }
 
 .enter {
-    color: #41cee9;
+    color: #217cd7;
 }
 
 .enter:hover {
-    color: #39b8d1;
+    color: #1a70c5;
 
 }
 
 .text_success {
-    color: #39b8d1;
+    color: #217cd7;
 }
 
 @media (max-width: 800px) {
