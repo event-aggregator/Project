@@ -45,6 +45,10 @@ letter-spacing: 2px;
 color: #fff;
 }
 
+.menu-main a:hover {
+  color: #19beec;
+}
+
 nav li:not(:first-child):before {
   color: #fff;
   content: " | ";
@@ -75,6 +79,7 @@ button:focus {
 
 input {
   font-family: "Segoe UI";
+  font-size: 20px;
 }
 input::placeholder {
   font-family: "Segoe UI";
@@ -163,12 +168,13 @@ justify-content: space-between;
 padding-top: 1%;
 padding-bottom: 1%;
 width: 100%;
-max-height: 110px;
+max-height: 130px;
 }
 
 footer p {
   color: white;
   margin-left: 3%;
+  text-align: center;
 }
 
 .github {
