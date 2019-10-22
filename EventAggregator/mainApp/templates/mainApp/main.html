@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html land=>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+         {% load static %}
+        <title>Главная - Агрегатор мероприятий</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="{% static 'mainApp/main.css' %}">
+    </head>
+
+    <body>
+        <div class="header">
+            <nav class="top-menu">
+                    <a class="navbar-logo" href=""><img src=""></a>
+                    <ul class="menu-main">
+                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-home"></i> </a> <a class="text_nav" href=""> Главная </a></li>
+                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-user-circle"></i> </a> <a class="text_nav" href=""> Мой профиль  </a></li>
+                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-calendar"></i> </a> <a class="text_nav" href=""> Агрегатор  </a></li>
+                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-question"></i> </a> <a class="text_nav" href=""> FAQ  </a></li>
+                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-envelope"></i>  </a> <a class="text_nav" href=""> Обратная связь</a></li>
+                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-sign-out"></i>  </a> <a href="/logout" class="logout text_nav" >Выход</a></li>
+                    </ul>
+
+                    </nav>
+        </div>
+
+        <main>
+            <h1 class="sls"> SEARCH. LEARN. SUCCEED. </h1>
+            <div class="search_back">
+                <div class="searchbox">
+                        <button class="btn-menu">
+                        </button>
+                        <input id="search" type="text" placeholder="Введите ключевые слова" name="search" class="search">
+                    <button  class="btn-search">
+                            <img src="https://img.icons8.com/cotton/24/000000/search--v2.png">
+                        </button>
+                </div>
+            </div>
+
+
+
+                <div class="main_img_div">
+                    <img class="main_img" src="https://sun9-43.userapi.com/c853420/v853420842/12fede/KwZ_IP6BRJk.jpg">
+                </div>
+
+                <div class="main_text">
+                        <h1 class="about">О нас</h1>
+                        <p class="about_p">Удобное progressive-web приложение для отслеживания различных мероприятий в среде IT с последующей регистрацией
+                             без дополнительных усилий. Платформа также будет иметь систему рекомендаций на основе проявленного пользователем интереса.
+                             Пользователь может задать конкретный поиск по тегам. Наша цель – создать рекомендательную систему, с которой будет удобно и просто
+                             взаимодействовать.
+                        </p>
+                </div>
+
+        </main>
+
+        <footer class="cite_footer">
+            <p>Проект выполнен в рамках учебной практики направления «Программирование и информационные технологии» факультета
+                    Прикладной математики — процессов управления Санкт-Петербургского государственного университета.</p>
+            <p>Головина Светлана, Ермолова Дарья, Лаисцева Милена, Моисеева Вероника, Щелкина Оксана. 2019 год.              <a href="https://github.com/event-aggregator" class="github"> <i class="fa fa-fw fa-github"></i> </a>
+
+            </p>
+
+
+        </footer>
+
+    </body>
+
+
+
+
+</html>

@@ -1,0 +1,257 @@
+body {
+  margin: 0;
+  background-color: #f7f7f7;
+  font-family: "Segoe UI";
+}
+
+
+/*MENU HEADER*/
+.top-menu {
+background: #000;
+display: flex;
+justify-content: space-between;
+padding-top: 1%;
+padding-bottom: 1%;
+width: 100%;
+max-height: 100px;
+text-transform: uppercase;
+}
+
+.top-menu:after {
+content: "";
+display: table;
+clear: both;
+}
+
+.navbar-logo {
+  display: inline-block;
+}
+.menu-main {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+.menu-main li {
+  display: inline-block;
+}
+
+.menu-main a {
+text-decoration: none;
+line-height: 61px;
+padding-right: 20px;
+padding-left: 20px;
+font-size: 20px;
+letter-spacing: 2px;
+color: #fff;
+}
+
+nav li:not(:first-child):before {
+  color: #fff;
+  content: " | ";
+}
+
+
+
+.picture_nav {
+display: none;
+}
+
+/*MAIN*/
+
+.sls {
+  text-align: center;
+  color: #000;
+}
+
+button img {
+  transition: transform .25s;
+}
+button:hover > img {
+  transform: scale(1.2);
+}
+button:focus {
+  outline: none;
+}
+
+input {
+  font-family: "Segoe UI";
+}
+input::placeholder {
+  font-family: "Segoe UI";
+}
+input:focus {
+  outline: none;
+}
+
+.search_back {
+  display: block;
+  margin: 0 auto;
+  width: 70%;
+  background-color: #f0ecec;
+  height: 100px;
+  padding-top: 2%;
+}
+
+.searchbox {
+  height: 60px;
+  width: 450px;
+  max-width: 90%;
+  background: white;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: flex;
+  border: 1px solid #cacaca;
+}
+.searchbox > .btn-menu {
+  padding: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.searchbox > .search {
+  border: none;
+  width: 100%;
+}
+.searchbox > .btn-search {
+  padding: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+
+.main_img  {
+  height: 40%;
+  width: 40%;
+  display: block;
+  margin: 0 auto;
+
+}
+
+.main_img_div {
+  width: 70%;
+  background-color: #19beec;
+  display: block;
+  margin: 0 auto;
+}
+
+.main_text {
+  margin: 0 auto;
+  width: 70%;
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.about  {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #000;
+
+}
+
+.about_p {
+  font-size: 20px;
+}
+
+/*FOOTER*/
+footer {
+background: #000;
+display: block;
+justify-content: space-between;
+padding-top: 1%;
+padding-bottom: 1%;
+width: 100%;
+max-height: 110px;
+}
+
+footer p {
+  color: white;
+  margin-left: 3%;
+}
+
+.github {
+  float: right;
+  margin-right: 1%;
+  font-size: 40px;
+  color: #fff;
+  text-decoration: none;
+}
+
+
+/*MEDIA*/
+@media (max-width: 915px) {
+
+.text_nav {
+display: none;
+}
+
+.menu-main {
+  width: 100%;;
+}
+
+ul {
+display: flex;
+}
+
+.menu-main li {
+display: table;
+margin: auto;
+}
+
+.menu-main a .picture_nav {
+display: block;
+text-align: right;
+width: 100%;
+}
+
+.picture_nav {
+display: inline;
+
+}
+
+nav li:not(:first-child):before {
+color: #fff;
+content: "";
+}
+
+.about_p {
+  font-size: 16px;
+}
+
+.main_img {
+  height: 50%;
+  width: 50%;
+}
+
+.main_img_div {
+  width: 100%;
+}
+
+.search_back {
+  width: 100%;
+}
+
+footer p {
+  font-size: 12px;
+}
+
+.github {
+  font-size: 25px;
+}
+
+}
+
+@media (max-width: 400px) {
+footer {
+  max-height: 100%;
+}
+footer p {
+  font-size: 10px;
+}
+
+.github {
+  font-size: 15px;
+}
+}

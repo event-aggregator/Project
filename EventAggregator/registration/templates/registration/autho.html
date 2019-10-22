@@ -20,6 +20,7 @@
               <form action="/login" class="form" method="POST">
                   {% csrf_token %}
                 <h1 class="form__heading text-center pb-4">Войдите</h1>
+                      <div class="form-control-feedback">{{error}}</div>
                 <label for="email" class="form__EmailLabel sr-only"  aria-label="Email">
             Email
           </label>

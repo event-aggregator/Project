@@ -10,61 +10,6 @@
 
 .rightside {
   display: block;
-  background: url("https://sun9-6.userapi.com/c853516/v853516892/133c4a/y2jBtAO1zfk.jpg");
-  background-size: 120%;
-  background-repeat: repeat-x;
-  background-position: center;
-
-  background-color: #f7f7f7;
-  width: 100%;
-}
-
-.form-container {
-  background-color: #fff;
-  max-width: 80%;
-  max-width: 800px;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}
-
-input {
-    display: flex;
-    flex-direction: column;
-    font-size: 16px;
-    padding: 20px 0px;
-    border: none;
-    border-bottom: solid 1px rgba(0, 0, 0, 0.1);
-    background: #fff;
-    width: 90%;
-    box-sizing: border-box;
-    color: #000;
-    font-weight: 400;
-    -webkit-appearance: none;
-}
-
-input:focus {
-    border-bottom: solid 1px #39b8d1;
-    outline: 0;
-    box-shadow: 0 2px 6px -8px rgba(182, 157, 230, 0.45);
-}
-
-.my_btn {
-    display: block;
-    margin: 0 auto;
-    width: 450px;
-    height: 60px;
-    border-radius: 10px;
-.leftside,
-.rightside {
-  height: 100vh;
-  width: 100%;
-}
-
-.leftside {
-  background-color: #f7f7f7;
-}
-
-.rightside {
-  display: block;
   width: 100%;
 }
 
@@ -127,7 +72,7 @@ input:focus {
     cursor: pointer;
     margin-bottom: 10px;
     margin-top: 10px;
-    border: 2px solid #39b8d1;
+    border: 2px solid #217cd7;
     font-weight: bold;
     background-color: #217cd7;
 }
@@ -137,16 +82,16 @@ input:focus {
 }
 
 .enter {
-    color: #41cee9;
+    color: #217cd7;
 }
 
 .enter:hover {
-    color: #39b8d1;
+    color: #1a70c5;
 
 }
 
 .text_success {
-    color: #39b8d1;
+    color: #217cd7;
 }
 
 @media (max-width: 800px) {

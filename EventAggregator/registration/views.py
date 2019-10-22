@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse, redirect
+from django.shortcuts import render, redirect
 from django.contrib import messages
 import bcrypt
 from database.models import Client as User
@@ -31,13 +31,25 @@ def register(request):
 
 
 def login(request):
-    print(request.POST['email'])
-    if User.objects.filter(email=request.POST['email']).exists():
-        user = User.objects.filter(email=request.POST['email'])[0]
-        if bcrypt.checkpw(request.POST['password'].encode(), user.password.encode()):
-            request.session['email'] = user.email
-            return redirect('/success')
-    return redirect('/')
+    error = ''
+    if request.method == 'POST':
+        if User.objects.filter(email=request.POST['email']).exists():
+            user = User.objects.filter(email=request.POST['email'])[0]
+            if bcrypt.checkpw(request.POST['password'].encode(), user.password.encode()):
+                request.session['email'] = user.email
+                response = redirect('/success')
+                return response
+            else:
+                error = u'Неверно введен пароль. Попробуйте снова.'
+                context = {
+                    "error": error
+                }
+        else:
+            error = u'Такого логина не существует. Зарегистрируйтесь.'
+            context = {
+                "error": error
+            }
+        return render(request, 'registration/autho.html', context)
 
 
 def success(request):
