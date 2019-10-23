@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html land=>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        {% load static %}
+        <title>Обратная связь - Агрегатор мероприятий</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="{% static 'mainApp/feedback.css' %}">
+    </head>
+
+    <body>
+        <div class="header">
+            <nav class="top-menu">
+                    <a class="navbar-logo" href=""><img src=""></a>
+                    <ul class="menu-main">
+                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-home"></i> </a> <a class="text_nav" href="/success"> Главная </a></li>
+                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-user-circle"></i> </a> <a class="text_nav" href=""> Мой профиль  </a></li>
+                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-calendar"></i> </a> <a class="text_nav" href=""> Агрегатор  </a></li>
+                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-question"></i> </a> <a class="text_nav" href="/faq"> FAQ  </a></li>
+                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-envelope"></i>  </a> <a class="text_nav" href=""> Обратная связь</a></li>
+                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-sign-out"></i>  </a> <a href="/logout" class="logout text_nav" >Выход</a></li>
+                    </ul>
+
+                    </nav>
+        </div>
+
+        <h1 class="sls"> ОБРАТНАЯ СВЯЗЬ </h1>
+
+
+
+        <div class="container">
+            <div class="container-header">
+                <h2 class="container-header-text">Задайте вопрос</h2>
+            </div>
+            <div class="container-content">
+                <form class="form" action="">
+                    <input type="text" placeholder="Ваше имя" class="form-input">
+                    <input type="email" placeholder="Email" class="form-input">
+                    <textarea placeholder="Ваш вопрос" class="form-textarea" ></textarea>
+                    <button type="button" class="my_btn">Отправить</button>
+                </form>
+
+            </div>
+        </div>
+
+
+        <footer class="cite_footer">
+                <p>Проект выполнен в рамках учебной практики направления «Программирование и информационные технологии» факультета
+                        Прикладной математики — процессов управления Санкт-Петербургского государственного университета.<br>
+                        Головина Светлана, Ермолова Дарья, Лаисцева Милена, Моисеева Вероника, Щелкина Оксана. <br>2019 год.              <a href="https://github.com/event-aggregator" class="github"> <i class="fa fa-fw fa-github"></i> </a>
+
+                </p>
+
+
+            </footer>
+
+        </body>
+
+
+
+
+    </html>

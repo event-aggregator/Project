@@ -11,3 +11,13 @@ def success(request):
 def out(request):
     logout(request)
     return redirect('/gologin')
+
+
+def faq(request):
+    user = User.objects.get(email=request.session['email'])
+    return render(request, 'mainApp/faq.html')
+
+
+def feedback(request):
+    user = User.objects.get(email=request.session['email'])
+    return render(request, 'mainApp/feedback.html')
