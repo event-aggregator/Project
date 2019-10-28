@@ -18,8 +18,8 @@ while True:
     data_timepad=(pd.concat([data_timepad, data_add], ignore_index=True,sort=False))
     skip+=100
     url=url.replace('skip='+str(skip-100), 'skip='+str(skip))
-data_timepad.drop(['categories','description_short','moderation_status','organization.id','poster_image.default_url','organization.logo_image.uploadcare_url','organization.subdomain','organization.description_html', 'organization.url','location.coordinates'], axis=1, inplace=True)
-data_timepad=data_timepad.rename({'description_html': 'description','location.country' :'country','url': 'link', 'poster_image.uploadcare_url': 'image', 'location.city': 'city', 'location.address': 'address', 'organization.name': 'group_name','organization.logo_image.default_url':'group_image'}, axis=1)
+data_timepad.drop(['categories','description_short','moderation_status','organization.id','poster_image.default_url','organization.logo_image.uploadcare_url','organization.logo_image.default_url','organization.subdomain','organization.description_html', 'organization.url','location.coordinates'], axis=1, inplace=True)
+data_timepad=data_timepad.rename({'description_html': 'description','location.country' :'country','url': 'link', 'poster_image.uploadcare_url': 'image', 'location.city': 'city', 'location.address': 'address', 'organization.name': 'group_name'}, axis=1)
 date_time=data_timepad['starts_at'].str.split('T',expand=True)
 date_time.columns=['date','time']
 date_time.time=pd.Series(date_time['time']).str.replace(':00+0300', ' ',regex=False)
@@ -39,30 +39,19 @@ for i in range(len(key)):
     data_add=data_add.rename({'venue.city':'city'}, axis=1)
     data_add.city=city[i]
     data_meetup=(pd.concat([data_meetup, data_add], ignore_index=True,sort=False))
-data_meetup.drop(['created','duration','date_in_series_pattern','time','updated','utc_offset', 'waitlist_count', 'yes_rsvp_count','visibility','venue.lon','venue.lat','member_pay_fee', 'group.created','group.id','group.join_mode', 'group.lat', 'group.lon','group.who', 'group.localized_location', 'group.state', 'group.country','group.region', 'group.timezone', 'rsvp_limit', 'pro_is_email_shared','venue.id','venue.repinned','venue.country','venue.localized_country_name','how_to_find_us', 'fee.accepts','fee.amount', 'fee.currency','fee.description', 'fee.label','fee.required', 'rsvp_close_offset'], axis=1, inplace=True)
-data_meetup=data_meetup.rename({'group.name': 'group_name','local_date': 'date','local_time': 'time','status':'address'}, axis=1)
+data_meetup=data_meetup[['id','name','local_date', 'local_time','city','status','link', 'description', 'group.name','visibility','group.urlname','venue.address_1', 'venue.address_2','venue.name']]
+data_meetup=data_meetup.rename({'group.name': 'group_name','group.urlname':'urlname','local_date': 'date','local_time': 'time','status':'address','visibility':'image'}, axis=1)
 data_meetup.address=data_meetup.apply(lambda x: f"{x['venue.address_1']} {x['venue.address_2']} {x['venue.name']}", axis=1)
-data_meetup.drop(['venue.address_1','venue.address_2','venue.name','rsvp_open_offset', 'venue.phone'], axis=1, inplace=True)
+data_meetup.drop(['venue.address_1','venue.address_2','venue.name'], axis=1, inplace=True)
 data_meetup.address=pd.Series(data_meetup['address']).str.replace('nan', ' ',regex=False)
+for urlname in data_meetup.urlname:
+    url_image= 'https://api.meetup.com/'+urlname+'/photos?&sign=true&photo-host=public&page=2'
+    response=requests.get(url_image).json()
+    if len(response)==2:
+        data_meetup.loc[data_meetup.urlname==urlname,'image']=response[1]["highres_link"]
+    else:
+        data_meetup.drop(data_meetup[data_meetup.urlname==urlname].index,axis=0, inplace=True)
+data_meetup.drop(['urlname'], axis=1, inplace=True)
 
 data=(pd.concat([data_meetup, data_timepad], ignore_index=True,sort=False))
-print(data.city)
-
-writer = pd.ExcelWriter('C:\\Users\\Dasha\\Desktop\\study\\python\\analys\\Data.xlsx', engine='xlsxwriter')
-data.to_excel(writer, 'Events')
-writer.save()
-# xl_file = pd.ExcelFile('C:\\Users\\Dasha\\Desktop\\study\\python\\analys\\Data.xlsx')
-# df = xl_file.parse('Events')
-
-
-# import psycopg2  
-# conn = psycopg2.connect(dbname='my_database', user='username')
-# cursor = conn.cursor() 
-
-# # Выполняем запрос.
-# cursor.execute("SELECT * FROM table_name")
-# row = cursor.fetchone()
- 
-# # Закрываем подключение.
-# cursor.close()
-# conn.close()
+data_json=data.to_json()
