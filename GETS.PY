@@ -54,4 +54,4 @@ for urlname in data_meetup.urlname:
 data_meetup.drop(['urlname'], axis=1, inplace=True)
 
 data=(pd.concat([data_meetup, data_timepad], ignore_index=True,sort=False))
-data_json=data.to_json()
+data_json=data.to_json(force_ascii=False)
