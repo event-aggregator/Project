@@ -1,0 +1,280 @@
+body {
+    margin: 0;
+    background-color: #f7f7f7;
+    font-family: "Segoe UI";
+  }
+
+
+
+
+  /*MENU HEADER*/
+  .top-menu {
+  background: #000;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  width: 100%;
+  max-height: 100px;
+  text-transform: uppercase;
+  }
+
+  .top-menu:after {
+  content: "";
+  display: table;
+  clear: both;
+  }
+
+  .navbar-logo {
+    display: inline-block;
+  }
+  .menu-main {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  }
+  .menu-main li {
+    display: inline-block;
+  }
+
+  .menu-main a {
+  text-decoration: none;
+  line-height: 61px;
+  padding-right: 20px;
+  padding-left: 20px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #fff;
+  }
+
+
+  .menu-main a:hover {
+    color: #19beec;
+  }
+
+
+  nav li:not(:first-child):before {
+    color: #fff;
+    content: " | ";
+  }
+
+
+
+  .picture_nav {
+  display: none;
+  }
+
+
+
+/*MAIN*/
+ .sls {
+    text-align: center;
+    color: #000;
+    margin: 3% auto;
+}
+
+.main_img  {
+    height: 40%;
+    width: 40%;
+    display: block;
+    float: left;
+    min-width: 450px;
+    margin-right: 5%;
+  }
+
+  .main_img_div {
+    width: 70%;
+    display: block;
+    margin-left: 20%;
+  }
+  .user_info {
+      margin: 10%;
+      margin-top: 5%;
+      text-transform: uppercase;
+      font-size: 20px;
+  }
+
+  .main {
+      margin-bottom: 10%;
+  }
+
+  #cities {
+      margin-top: 30%;
+  }
+
+  .screen-reader-text {
+    height: auto;
+    width: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute !important;
+  }
+  .screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus {
+    height: auto;
+    width: auto;
+    background-color: #000000;
+    border-radius: 2px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #FFFFFF;
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    left: 0.3125rem;
+    line-height: normal;
+    padding: 0.9375rem 1.4375rem 0.875rem;
+    text-decoration: none;
+    top: 0.3125rem;
+    z-index: 100000;
+  }
+
+  .form .chosen-container {
+    font-size: 16px;
+  }
+  .form .chosen-container .chosen-single,
+  .form .chosen-container .chosen-drop {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .form .chosen-container-active.chosen-with-drop .chosen-single,
+  .form .chosen-container-active .chosen-choices {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .form .chosen-container-active .chosen-results .highlighted {
+    background: #21759b;
+  }
+
+ #foo_form {
+     width:70%;
+     margin-left: 42%;
+ }
+
+
+
+ /*FOOTER*/
+ footer {
+    background: #000;
+    display: block;
+    justify-content: space-between;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    width: 100%;
+    max-height: 130px;
+    }
+
+    footer p {
+      color: white;
+      margin-left: 3%;
+      text-align: center;
+    }
+
+    .github {
+      float: right;
+      margin-right: 1%;
+      font-size: 40px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+
+/*MEDIA*/
+@media (max-width: 915px) {
+
+  .text_nav {
+  display: none;
+  }
+
+
+  .menu-main {
+    width: 100%;;
+  }
+
+  .menu-main {
+  display: flex;
+  }
+
+
+  .menu-main li {
+  display: table;
+  margin: auto;
+  }
+
+  .menu-main a .picture_nav {
+  display: block;
+  text-align: right;
+  width: 100%;
+  }
+
+  .picture_nav {
+  display: inline;
+
+  }
+
+  nav li:not(:first-child):before {
+  color: #fff;
+  content: "";
+  }
+
+  .main_img {
+    max-height: 50%;
+    max-width: 50%;
+    min-width: 100%;
+  }
+
+  .main_img_div {
+      max-width: 100%;
+      background-color: #fff;
+      margin: 0 auto;
+  }
+
+  h3 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  #foo_form {
+      margin-left: 5%;
+  }
+
+  .main_img_div {
+    width: 100%;
+  }
+
+
+  footer p {
+    font-size: 11px;
+  }
+
+  .github {
+    font-size: 25px;
+  }
+
+  }
+
+  @media (max-width: 400px) {
+
+
+    .header {
+      left: 0; right:0; top: 0;
+  }
+
+  .menu-main a {
+      padding-left: 5px;
+      padding-right: 5px;
+  }
+
+  footer {
+    max-height: 100%;
+  }
+  footer p {
+    font-size: 10px;
+  }
+
+  .github {
+    font-size: 15px;
+  }
+  }

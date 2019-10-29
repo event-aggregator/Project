@@ -6,4 +6,5 @@ urlpatterns = [
     path('logout', views.out),
     path('faq', views.faq),
     path('feedback', views.feedback),
+    path('user_page', views.user_page),
 ]

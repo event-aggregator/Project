@@ -94,10 +94,6 @@ input:focus {
     color: #217cd7;
 }
 
-.form-control-feedback{
-    color: red;
-}
-
 @media (max-width: 800px) {
     .rightside {
         display: none !important;
