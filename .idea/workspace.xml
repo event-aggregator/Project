@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9c07dbe-e0f9-447e-a432-3f628a62e800" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/EventAggregator/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EventAggregator/mainApp/static/mainApp/cities.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EventAggregator/mainApp/static/mainApp/user_page.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EventAggregator/mainApp/templates/mainApp/user_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventAggregator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EventAggregator/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventAggregator/mainApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/EventAggregator/mainApp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventAggregator/mainApp/templates/mainApp/faq.html" beforeDir="false" afterPath="$PROJECT_DIR$/EventAggregator/mainApp/templates/mainApp/faq.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventAggregator/mainApp/templates/mainApp/feedback.html" beforeDir="false" afterPath="$PROJECT_DIR$/EventAggregator/mainApp/templates/mainApp/feedback.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventAggregator/mainApp/templates/mainApp/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/EventAggregator/mainApp/templates/mainApp/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventAggregator/database/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/EventAggregator/database/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventAggregator/mainApp/templates/mainApp/user_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/EventAggregator/mainApp/templates/mainApp/user_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EventAggregator/mainApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/EventAggregator/mainApp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EventAggregator/mainApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/EventAggregator/mainApp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventAggregator/registration/static/registration/registration.css" beforeDir="false" afterPath="$PROJECT_DIR$/EventAggregator/registration/static/registration/registration.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventAggregator/registration/templates/registration/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/EventAggregator/registration/templates/registration/registration.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,20 +16,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EventAggregator/mainApp/static/mainApp/faq.css">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/EventAggregator/mainApp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6909">
-              <caret line="329" column="3" selection-start-line="329" selection-start-column="3" selection-end-line="329" selection-end-column="3" />
+            <state relative-caret-position="200">
+              <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EventAggregator/mainApp/static/mainApp/main.css">
+        <entry file="file://$PROJECT_DIR$/EventAggregator/database/views.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EventAggregator/EventAggregator/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5733">
-              <caret line="273" column="1" selection-start-line="273" selection-start-column="1" selection-end-line="273" selection-end-column="1" />
+            <state relative-caret-position="-234" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EventAggregator/registration/templates/registration/registration.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="819">
+              <caret line="39" column="97" lean-forward="true" selection-start-line="39" selection-start-column="97" selection-end-line="39" selection-end-column="97" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EventAggregator/mainApp/templates/mainApp/user_page.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="186">
+              <caret line="44" column="57" selection-start-line="44" selection-start-column="57" selection-end-line="44" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -46,34 +62,34 @@
         <entry file="file://$PROJECT_DIR$/EventAggregator/mainApp/templates/mainApp/feedback.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="47">
-              <caret line="10" column="37" lean-forward="true" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/EventAggregator/mainApp/templates/mainApp/user_page.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="15" column="32" lean-forward="true" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+              <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="72" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EventAggregator/mainApp/templates/mainApp/faq.html">
+        <entry file="file://$PROJECT_DIR$/EventAggregator/database/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="19" column="140" selection-start-line="19" selection-start-column="140" selection-end-line="19" selection-end-column="140" />
+            <state relative-caret-position="966">
+              <caret line="46" column="48" lean-forward="true" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EventAggregator/mainApp/templates/mainApp/main.html">
+        <entry file="file://$PROJECT_DIR$/EventAggregator/registration/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+            <state relative-caret-position="133">
+              <caret line="35" column="66" selection-start-line="35" selection-start-column="66" selection-end-line="35" selection-end-column="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EventAggregator/registration/templates/registration/autho.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="372">
+              <caret line="39" column="38" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -81,40 +97,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EventAggregator/mainApp/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="5" column="30" lean-forward="true" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+            <state relative-caret-position="126">
+              <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EventAggregator/mainApp/static/mainApp/user_page.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2095">
-              <caret line="279" column="3" selection-start-line="279" selection-start-column="3" selection-end-line="279" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EventAggregator/mainApp/static/mainApp/cities.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="39" column="6" lean-forward="true" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EventAggregator/mainApp/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="28" column="52" lean-forward="true" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
-              <folding>
-                <element signature="e#0#45#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -131,13 +117,17 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>print</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/EventAggregator/registration/templates/registration/registration.html" />
         <option value="$PROJECT_DIR$/EventAggregator/registration/templates/registration/autho.html" />
         <option value="$PROJECT_DIR$/EventAggregator/registration/views.py" />
         <option value="$PROJECT_DIR$/EventAggregator/registration/static/registration/registration.css" />
@@ -145,18 +135,20 @@
         <option value="$PROJECT_DIR$/EventAggregator/mainApp/static/mainApp/main.css" />
         <option value="$PROJECT_DIR$/EventAggregator/mainApp/static/mainApp/user_page.css" />
         <option value="$PROJECT_DIR$/EventAggregator/mainApp/static/mainApp/cities.js" />
-        <option value="$PROJECT_DIR$/EventAggregator/mainApp/views.py" />
         <option value="$PROJECT_DIR$/EventAggregator/mainApp/templates/mainApp/feedback.html" />
-        <option value="$PROJECT_DIR$/EventAggregator/mainApp/templates/mainApp/user_page.html" />
         <option value="$PROJECT_DIR$/EventAggregator/mainApp/templates/mainApp/faq.html" />
         <option value="$PROJECT_DIR$/EventAggregator/mainApp/templates/mainApp/main.html" />
         <option value="$PROJECT_DIR$/EventAggregator/mainApp/urls.py" />
+        <option value="$PROJECT_DIR$/EventAggregator/database/models.py" />
+        <option value="$PROJECT_DIR$/EventAggregator/mainApp/templates/mainApp/user_page.html" />
+        <option value="$PROJECT_DIR$/EventAggregator/registration/templates/registration/registration.html" />
+        <option value="$PROJECT_DIR$/EventAggregator/mainApp/views.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="17" />
-    <option name="y" value="34" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="27" />
+    <option name="y" value="69" />
     <option name="width" value="1341" />
     <option name="height" value="782" />
   </component>
@@ -182,21 +174,12 @@
               <item name="Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Project" type="462c0819:PsiDirectoryNode" />
               <item name="EventAggregator" type="462c0819:PsiDirectoryNode" />
-              <item name="mainApp" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="Project" type="462c0819:PsiDirectoryNode" />
               <item name="EventAggregator" type="462c0819:PsiDirectoryNode" />
-              <item name="mainApp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Project" type="462c0819:PsiDirectoryNode" />
-              <item name="EventAggregator" type="462c0819:PsiDirectoryNode" />
-              <item name="mainApp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="mainApp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -213,6 +196,19 @@
               <item name="mainApp" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="mainApp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project" type="462c0819:PsiDirectoryNode" />
+              <item name="EventAggregator" type="462c0819:PsiDirectoryNode" />
+              <item name="registration" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project" type="462c0819:PsiDirectoryNode" />
+              <item name="EventAggregator" type="462c0819:PsiDirectoryNode" />
+              <item name="registration" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -260,15 +256,15 @@
       <option name="presentableId" value="Default" />
       <updated>1571647587429</updated>
       <workItem from="1571647588587" duration="3301000" />
-      <workItem from="1572368179966" duration="1889000" />
+      <workItem from="1572368179966" duration="10688000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5190000" />
+    <option name="totallyTimeSpent" value="13989000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="17" y="34" width="1341" height="782" extended-state="0" />
+    <frame x="24" y="109" width="1341" height="782" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25327176" />
@@ -302,33 +298,12 @@
     <entry file="file://$PROJECT_DIR$/EventAggregator/registration/templates/registration/login.html" />
     <entry file="file://$PROJECT_DIR$/EventAggregator/registration/templates/registration/form.html" />
     <entry file="file://$PROJECT_DIR$/EventAggregator/registration/templates/registration/registr.html" />
-    <entry file="file://$PROJECT_DIR$/EventAggregator/registration/templates/registration/registration.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="38" column="44" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EventAggregator/registration/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EventAggregator/registration/templates/registration/autho.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="819">
-          <caret line="39" column="38" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EventAggregator/registration/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="35" column="66" selection-start-line="35" selection-start-column="66" selection-end-line="35" selection-end-column="66" />
         </state>
       </provider>
     </entry>
@@ -370,24 +345,7 @@
     <entry file="file://$PROJECT_DIR$/EventAggregator/mainApp/static/mainApp/cities.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
-          <caret line="39" column="6" lean-forward="true" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EventAggregator/mainApp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="28" column="52" lean-forward="true" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EventAggregator/mainApp/templates/mainApp/feedback.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="10" column="37" lean-forward="true" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="72" />
+          <caret line="39" column="6" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -401,24 +359,80 @@
     <entry file="file://$PROJECT_DIR$/EventAggregator/mainApp/templates/mainApp/main.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="109">
-          <caret line="17" column="42" lean-forward="true" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+          <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/EventAggregator/mainApp/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EventAggregator/EventAggregator/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-234" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EventAggregator/database/views.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/EventAggregator/mainApp/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="30" lean-forward="true" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+        <state relative-caret-position="126">
+          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/EventAggregator/registration/templates/registration/autho.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="39" column="38" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EventAggregator/registration/templates/registration/registration.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="819">
+          <caret line="39" column="97" lean-forward="true" selection-start-line="39" selection-start-column="97" selection-end-line="39" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EventAggregator/database/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="966">
+          <caret line="46" column="48" lean-forward="true" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/EventAggregator/mainApp/templates/mainApp/user_page.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="32" lean-forward="true" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+        <state relative-caret-position="186">
+          <caret line="44" column="57" selection-start-line="44" selection-start-column="57" selection-end-line="44" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EventAggregator/mainApp/templates/mainApp/feedback.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="47">
+          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EventAggregator/registration/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="35" column="66" selection-start-line="35" selection-start-column="66" selection-end-line="35" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EventAggregator/mainApp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

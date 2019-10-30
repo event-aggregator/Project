@@ -38,30 +38,33 @@
         </div>
 
         <div class="user_info">
-            <h3> Имя </h3>
-            <h3> Фамилия </h3>
-            <h3> Email </h3>
-            <h3> Города</h3>
-            <form class="form" id="foo_form">
+            <h3> Имя:  <strong>{{user.first_name}}</strong> </h3>
+            <h3> Фамилия: <strong>{{user.last_name}}</strong> </h3>
+            <h3> Email: <strong>{{user.email}}</strong> </h3>
+            <h3> Города: <strong></strong> </h3>
+            <form class="form" id="foo_form" action="/cities" method="post">
+                {% csrf_token %}
                         <label for="foo_select" class="screen-reader-text">Выберите интересующие Вас города</label>
-                        <select id="foo_select" class="dropdown" form="foo_form" multiple data-placeholder="Выберите интересующие Вас города...">
-                                <option value="Москва">Москва</option>
-                                <option value="Санкт-Петербург">Санкт-Петербург</option>
-                                <option value="Новосибирск">Новосибирск</option>
-                                <option value="Екатеринбург">Екатеринбург</option>
-                                <option value="Нижний Новгород">Нижний Новгород</option>
-                                <option value="Казань">Казань</option>
-                                <option value="Уфа">Уфа</option>
-                                <option value="Сочи">Сочи</option>
-                                <option value="Воронеж">Воронеж</option>
-                                <option value="Саратов">Саратов</option>
-                                <option value="Владивосток">Владивосток</option>
-                                <option value="Омск">Омск</option>
-                                <option value="Краснодар">Краснодар</option>
-                                <option value="Челябинск">Челябинск</option>
-                                <option value="Стерлитамак">Стерлитамак</option>
-                                <option value="Мурманск">Мурманск</option>
+                        <select name="cities" id="foo_select" class="dropdown" form="foo_form" multiple data-placeholder="Выберите интересующие Вас города...">
+                                <option value="Москва" name="cities">Москва</option>
+                                <option value="Санкт-Петербург" name="cities">Санкт-Петербург</option>
+                                <option value="Новосибирск" name="cities">Новосибирск</option>
+                                <option value="Екатеринбург" name="cities">Екатеринбург</option>
+                                <option value="Нижний Новгород" name="cities">Нижний Новгород</option>
+                                <option value="Казань" name="cities">Казань</option>
+                                <option value="Уфа" name="cities">Уфа</option>
+                                <option value="Сочи" name="cities">Сочи</option>
+                                <option value="Воронеж" name="cities">Воронеж</option>
+                                <option value="Саратов" name="cities">Саратов</option>
+                                <option value="Владивосток" name="cities">Владивосток</option>
+                                <option value="Омск" name="cities">Омск</option>
+                                <option value="Краснодар" name="cities">Краснодар</option>
+                                <option value="Челябинск" name="cities">Челябинск</option>
+                                <option value="Стерлитамак" name="cities">Стерлитамак</option>
+                                <option value="Мурманск" name="cities">Мурманск</option>
                         </select>
+                         <input type="submit" style=" background:transparent;margin-left: 110px; font-size: 35px;" id="submit"
+                            value="Submit">
                     </form>
                     <h3> Сферы</h3>
                     <form class="form" id="foo_form">

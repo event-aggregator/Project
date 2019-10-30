@@ -48,9 +48,9 @@ class Client(models.Model):
     last_name = models.CharField(max_length=50)
     email = models.CharField(max_length=50, primary_key=True)
     password = models.CharField(max_length=200)
-    languages = models.ManyToManyField(Languages)
-    areas = models.ManyToManyField(Areas)
-    cities = models.ManyToManyField(Cities)
+    languages = models.ManyToManyField(Languages, related_name='ClientLanguages')
+    areas = models.ManyToManyField(Areas, related_name='ClientAreas')
+    cities = models.ManyToManyField(Cities, related_name='ClientCities')
     objects = UserManager()
 
 

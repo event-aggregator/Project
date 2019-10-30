@@ -1,12 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import logout
-from database.models import Client as User
+from database.models import Client, Cities
 from .forms import ContactForm
 from django.http import HttpResponse, HttpResponseRedirect
 
 
 def success(request):
-    user = User.objects.get(email=request.session['email'])
+    user = Client.objects.get(email=request.session['email'])
     return render(request, 'mainApp/main.html')
 
 
@@ -16,17 +16,32 @@ def out(request):
 
 
 def faq(request):
-    user = User.objects.get(email=request.session['email'])
+    user = Client.objects.get(email=request.session['email'])
     return render(request, 'mainApp/faq.html')
 
 
 def feedback(request):
-    user = User.objects.get(email=request.session['email'])
+    user = Client.objects.get(email=request.session['email'])
     return render(request, 'mainApp/feedback.html')
 
 def user_page(request):
-    user = User.objects.get(email=request.session['email'])
-    return render(request, 'mainApp/user_page.html')
+    user = Client.objects.get(email=request.session['email'])
+    print(user)
+    context = {
+        "user": user,
+    }
+    return render(request, 'mainApp/user_page.html', context)
+
+def cities(request):
+    user = Client.objects.filter(email=request.session['email']).first()
+
+    for i in request.POST.getlist('cities'):
+        city = Cities.objects.filter(name=i).first()
+        user.cities.add(city)
+
+        user.save()
+
+    return redirect('/user_page')
 
 
 # def contactform(reguest):
