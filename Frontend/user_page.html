@@ -35,55 +35,15 @@
         </div>
 
         <div class="user_info">
-            <h3> Имя </h3>
-            <h3> Фамилия </h3>
-            <h3> Email </h3>
-            <h3> Города</h3>
-            <form class="form" id="foo_form">
-                        <label for="foo_select" class="screen-reader-text">Выберите интересующие Вас города</label>
-                        <select id="foo_select" class="dropdown" form="foo_form" multiple data-placeholder="Выберите интересующие Вас города...">
-                                <option value="Москва">Москва</option>
-                                <option value="Санкт-Петербург">Санкт-Петербург</option>
-                                <option value="Новосибирск">Новосибирск</option>
-                                <option value="Екатеринбург">Екатеринбург</option>
-                                <option value="Нижний Новгород">Нижний Новгород</option>
-                                <option value="Казань">Казань</option>
-                                <option value="Уфа">Уфа</option>
-                                <option value="Сочи">Сочи</option>
-                                <option value="Воронеж">Воронеж</option>
-                                <option value="Саратов">Саратов</option>
-                                <option value="Владивосток">Владивосток</option>
-                                <option value="Омск">Омск</option>
-                                <option value="Краснодар">Краснодар</option>
-                                <option value="Челябинск">Челябинск</option>
-                                <option value="Стерлитамак">Стерлитамак</option>
-                                <option value="Мурманск">Мурманск</option>
-                        </select>
-                    </form>
-                    <h3> Сферы</h3>
-                    <form class="form" id="foo_form">
-                                <label for="foo_select" class="screen-reader-text">Выберите интересующие Вас сферы</label>
-                                <select id="foo_select" class="dropdown" form="foo_form" multiple data-placeholder="Выберите интересующие Вас города...">
-                                        <option value="UI/UX">UI/UX</option>
-                                        <option value="Frontend">Frontend</option>
-                                        <option value="Backend">Backend</option>
-                                        <option value="IoT">IoT</option>
-                                        <option value="Machine Learning">Machine Learning</option>
-                                        <option value="Data Science">Data Science</option>
-                                        <option value="DEvOps">DevOps</option>
-                                        <option value="Software">Software</option>
-                                        <option value="Big Data">Big Data</option>
-                                        <option value="GameDev">GameDev</option>
-                                        <option value="Mobile Development"> Mobile Development</option>
-                                        <option value="Information Security">Information Security</option>
-                                </select>
-                            </form>
-        </div>
-        </div>
+            <h3> Имя:  <strong class="db">{{user.first_name}}</strong> </h3>
+            <h3> Фамилия: <strong  class="db">{{user.last_name}}</strong> </h3>
+            <h3> Email: <strong  class="db">{{user.email}}</strong> </h3>
+            <h3> Города: <strong  class="db">{{user.cities}}</strong> </h3>
+            <h3> Темы: <strong  class="db">{{user.areas}}</strong> </h3>
 
      
 	
-      
+      </div>
         
         <footer class="cite_footer">
                 <p>Проект выполнен в рамках учебной практики направления «Программирование и информационные технологии» факультета

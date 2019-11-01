@@ -1,4 +1,4 @@
-/**
+/*
  * Chosen: Multiple Dropdown
  */
 window.WDS_Chosen_Multiple_Dropdown = {};
