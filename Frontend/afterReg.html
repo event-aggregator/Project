@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Интересы - Агрегатор мероприятий</title>
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.min.css">
+
+        <link rel="stylesheet" href="registration.css">
+        
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.js"></script>
+
+        <script src="cities.js"></script>
+    </head>
+
+    <body>
+        <div class="row no-gutters">
+            <div class="col-md-6  col no-gutters">
+              <div class="leftside d-flex justify-content-center align-items-center">
+                <div class="form-container rounded p-5">
+                  <form action="/registration" class="form">
+                    <h1 class="form__heading text-center pb-4">Последний шаг - добавьте: </h1>
+                    
+                    <h3> Города</h3>
+                     <form class="form" id="foo_form">
+                        <label for="foo_select" class="screen-reader-text">Выберите интересующие Вас города</label>
+                        <select id="foo_select" class="dropdown" form="foo_form" multiple data-placeholder="Выберите интересующие Вас города...">
+                                <option value="Москва">Москва</option>
+                                <option value="Санкт-Петербург">Санкт-Петербург</option>
+                                <option value="Новосибирск">Новосибирск</option>
+                                <option value="Екатеринбург">Екатеринбург</option>
+                                <option value="Нижний Новгород">Нижний Новгород</option>
+                                <option value="Казань">Казань</option>
+                                <option value="Уфа">Уфа</option>
+                                <option value="Сочи">Сочи</option>
+                                <option value="Воронеж">Воронеж</option>
+                                <option value="Саратов">Саратов</option>
+                                <option value="Владивосток">Владивосток</option>
+                                <option value="Омск">Омск</option>
+                                <option value="Краснодар">Краснодар</option>
+                                <option value="Челябинск">Челябинск</option>
+                                <option value="Стерлитамак">Стерлитамак</option>
+                                <option value="Мурманск">Мурманск</option>
+                        </select>
+                    </form>
+                    <h3> Сферы</h3>
+                    <form class="form" id="foo_form1">
+                                <label for="foo_select" class="screen-reader-text">Выберите интересующие Вас темы</label>
+                                <select id="foo_select1" class="dropdown" form="foo_form" multiple data-placeholder="Выберите интересующие Вас темы...">
+                                        <option value="UI/UX">UI/UX</option>
+                                        <option value="Frontend">Frontend</option>
+                                        <option value="Backend">Backend</option>
+                                        <option value="IoT">IoT</option>
+                                        <option value="Machine Learning">Machine Learning</option>
+                                        <option value="Data Science">Data Science</option>
+                                        <option value="DEvOps">DevOps</option>
+                                        <option value="Software">Software</option>
+                                        <option value="Big Data">Big Data</option>
+                                        <option value="GameDev">GameDev</option>
+                                        <option value="Mobile Development"> Mobile Development</option>
+                                        <option value="Information Security">Information Security</option>
+                                </select>
+                            </form>
+
+                    <button class="my_btn" aria-label="Create Account Button">Сохранить</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-md-6 no-gutters">
+              <div class="rightside r_interests d-flex justify-content-center align-items-center">
+              </div>
+            </div>
+          </div>
+    </body>
+
+    </html>
