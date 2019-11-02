@@ -24,7 +24,7 @@ def timepad(url):
     data = data[data.country == 'Россия'] #Оставляю только мероприятия в России
     data.drop(['starts_at','country'],axis=1,inplace=True) #Удаление теперь ненужных колонок
     data.loc[data.city == 'Без города', 'city'] = 'Онлайн' #Всё, что без города - онлайн мероприятия
-    return(data)
+    return data
 
 def meetup(url):
     data = pd.DataFrame(index=[], columns=[]).fillna(0)
@@ -52,11 +52,26 @@ def meetup(url):
         else:
             data.drop(data[data.urlname==urlname].index,axis=0, inplace=True)
     data.drop(['urlname'], axis=1, inplace=True)
-    return(data)
+    return data
 
 def parser():
     url_timepad='https://api.timepad.ru/v1/events?fields=description_short%2C%20description_html%2Clocation%2C%20organization&limit=100&skip=0&category_ids=452&access_statuses=public&moderation_statuses=featured%2C%20shown'
     url_meetup='https://api.meetup.com/find/upcoming_events?&sign=true&photo-host=public&topic_category=34&page=1000&allMeetups=true'
     data=(pd.concat([meetup(url_meetup),timepad(url_timepad)], ignore_index=True,sort=False))
     data_json=data.to_json(force_ascii=False)
-    return(data_json)
+    return data_json
+
+def cities():
+    city=[]
+    url_timepad='https://api.timepad.ru/v1/events?fields=description_short%2C%20description_html%2Clocation%2C%20organization&limit=100&skip=0&category_ids=452&access_statuses=public&moderation_statuses=featured%2C%20shown'
+    url_meetup='https://api.meetup.com/find/upcoming_events?&sign=true&photo-host=public&topic_category=34&page=1000&allMeetups=true'
+    data=(pd.concat([meetup(url_meetup),timepad(url_timepad)], ignore_index=True,sort=False))
+    for element in data.city:
+        if element not in city:
+            city.append(element)
+    city.remove('Онлайн')
+    return city
+          
+
+    
+    
