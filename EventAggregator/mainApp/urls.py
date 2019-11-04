@@ -8,4 +8,6 @@ urlpatterns = [
     path('feedback', views.feedback),
     path('user_page', views.user_page),
     path('cities', views.cities),
+    path('contact', views.contact),
+
 ]

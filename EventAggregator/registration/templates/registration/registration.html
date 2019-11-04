@@ -36,7 +36,8 @@
                     <label for="password" class="form__passwordLabel sr-only"  aria-label="Password">
                 Пароль
               </label>
-                    <input type="password" name="password" id="password" class="form__Password" placeholder="Пароль">
+                    <input type="password" name="password" id="password" class="form__Password" placeholder="Пароль" pattern="[A-Za-z0-9]{6,10}"
+                           title="Пароль должен содержать от 6 до 10 знаков. Допускается использовать цифры и буквы." required >
                 <label for="password" class="form__passwordLabel sr-only"  aria-label="Password">
                   Подтвердите пароль
                 </label>

@@ -125,3 +125,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+EMAIL_HOST = 'smtp.mail.ru'
+EMAIL_HOST_USER = 'event_aggregator@mail.ru'
+EMAIL_HOST_PASSWORD = 'spbu_2019'
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+DEFAULT_FROM_EMAIL = 'event_aggregator@mail.ru'

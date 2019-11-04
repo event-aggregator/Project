@@ -41,7 +41,12 @@
             <h3> Имя:  <strong>{{user.first_name}}</strong> </h3>
             <h3> Фамилия: <strong>{{user.last_name}}</strong> </h3>
             <h3> Email: <strong>{{user.email}}</strong> </h3>
-            <h3> Города: <strong></strong> </h3>
+            <h3> Города:
+                <strong> {% for city in cities %}
+                    {{ city.name }}
+                </strong>
+                {% endfor %}
+            </h3>
             <form class="form" id="foo_form" action="/cities" method="post">
                 {% csrf_token %}
                         <label for="foo_select" class="screen-reader-text">Выберите интересующие Вас города</label>

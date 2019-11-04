@@ -1,27 +1,6 @@
 from django.db import models
 
 
-class UserManager(models.Manager):
-
-    def validator(self, postData):
-        errors = {}
-        if postData['first_name'].isalpha() is False:
-            if len(postData['first_name']) < 2:
-                errors['first_name'] = "First name can not be shorter than 2 characters"
-
-        if postData['last_name'].isalpha() is False:
-            if len(postData['last_name']) < 2:
-                errors['last_name'] = "Last name can not be shorter than 2 characters"
-
-        if len(postData['email']) == 0:
-            errors['email'] = "You must enter an email"
-
-        if len(postData['password']) < 8:
-            errors['password'] = "Password is too short!"
-
-        return errors
-
-
 class Areas(models.Model):
     name = models.CharField(max_length=50, primary_key=True)
 
@@ -48,10 +27,9 @@ class Client(models.Model):
     last_name = models.CharField(max_length=50)
     email = models.CharField(max_length=50, primary_key=True)
     password = models.CharField(max_length=200)
-    languages = models.ManyToManyField(Languages, related_name='ClientLanguages')
-    areas = models.ManyToManyField(Areas, related_name='ClientAreas')
-    cities = models.ManyToManyField(Cities, related_name='ClientCities')
-    objects = UserManager()
+    # languages = models.ManyToManyField(Languages, related_name='ClientLanguages')
+    # areas = models.ManyToManyField(Areas, related_name='ClientAreas')
+    # cities = models.ManyToManyField(Cities, related_name='ClientCities')
 
 
 class ClientEvents(models.Model):
@@ -59,6 +37,19 @@ class ClientEvents(models.Model):
     events_id = models.ForeignKey(Events, on_delete=models.CASCADE)
     status = models.BooleanField()
 
+class ClientCities(models.Model):
+    user_email = models.ForeignKey(Client, on_delete=models.CASCADE)
+    city_name = models.ForeignKey(Cities, on_delete=models.CASCADE)
+
+
+class ClientLanguages(models.Model):
+    user_email = models.ForeignKey(Client, on_delete=models.CASCADE)
+    language_name = models.ForeignKey(Languages, on_delete=models.CASCADE)
+
+
+class ClientAreas(models.Model):
+    user_email = models.ForeignKey(Client, on_delete=models.CASCADE)
+    area_name = models.ForeignKey(Areas, on_delete=models.CASCADE)
 
 
 

@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import logout
-from database.models import Client, Cities
+from database.models import Client, Cities, ClientCities
 from .forms import ContactForm
 from django.http import HttpResponse, HttpResponseRedirect
+from django.core.mail import send_mail, BadHeaderError
 
 
 def success(request):
@@ -26,46 +27,60 @@ def feedback(request):
 
 def user_page(request):
     user = Client.objects.get(email=request.session['email'])
-    print(user)
+    cities = ClientCities.objects.filter(user_email=user.email)
+    print(cities)
+    all_cities = []
+    for city in cities:
+
+        #создаем словарь
+        city_info = {
+            'city': city.city_name,
+        }
+        all_cities.append(city_info)
+
     context = {
         "user": user,
+        "cities": all_cities
     }
     return render(request, 'mainApp/user_page.html', context)
 
 def cities(request):
+    # user = Client.objects.filter(email=request.session['email']).first()
+    # for i in request.POST.getlist('cities'):
+    #     city = Cities.objects.filter(name=i).first()
+    #     user.cities.add(city)
+    #     user.save()
+    # return redirect('/user_page')
     user = Client.objects.filter(email=request.session['email']).first()
-
     for i in request.POST.getlist('cities'):
         city = Cities.objects.filter(name=i).first()
-        user.cities.add(city)
-
-        user.save()
-
+        city1 = ClientCities(user_email=user, city_name=city)
+        city1.save()
     return redirect('/user_page')
 
 
-# def contactform(reguest):
-#     if reguest.method == 'POST':
-#         form = ContactForm(reguest.POST)
-#         # Если форма заполнена корректно, сохраняем все введённые пользователем значения
-#         if form.is_valid():
-#             subject = form.cleaned_data['subject']
-#             sender = form.cleaned_data['sender']
-#             message = form.cleaned_data['message']
-#             copy = form.cleaned_data['copy']
-#
-#             recepients = ['myemail@gmail.com']
-#             # Если пользователь захотел получить копию себе, добавляем его в список получателей
-#             if copy:
-#                 recepients.append(sender)
-#             try:
-#                 send_mail(subject, message, 'myemail@gmail.com', recepients)
-#             except BadHeaderError: #Защита от уязвимости
-#                 return HttpResponse('Invalid header found')
-#             # Переходим на другую страницу, если сообщение отправлено
-#             return HttpResponseRedirect('/blog/thanks/')
-#
-#     else:
-#         form = ContactForm()
-#     # Выводим форму в шаблон
-#     return render(reguest, 'contact.html', {'form': form, 'username': auth.get_user(reguest).username})
+def contact(request):
+    user = Client.objects.get(email=request.session['email'])
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        # Если форма заполнена корректно, сохраняем все введённые пользователем значения
+        if form.is_valid():
+
+            subject = form.cleaned_data['subject']
+            message = form.cleaned_data['message']
+
+            recepients = ['event_aggregator@mail.ru']
+            # Если пользователь захотел получить копию себе, добавляем его в список получателей
+            message += "\n" + "От: " + user.email
+
+            try:
+                send_mail(subject, message, 'event_aggregator@mail.ru', recepients)
+            except BadHeaderError: #Защита от уязвимости
+                return HttpResponse('Invalid header found')
+            # Переходим на другую страницу, если сообщение отправлено
+            return render(request, 'mainApp/thanks.html')
+
+    else:
+        form = ContactForm()
+    # Выводим форму в шаблон
+    return render(request, 'mainApp/feedback.html', {'form': form, 'username': user.first_name})

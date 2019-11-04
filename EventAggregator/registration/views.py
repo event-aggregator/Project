@@ -17,12 +17,6 @@ def goregister(request):
 
 
 def register(request):
-    errors = User.objects.validator(request.POST)
-    if len(errors):
-        for tag, error in errors.items():
-            messages.error(request, error, extra_tags=tag)
-        return redirect('/')
-
     hashed_password = bcrypt.hashpw(request.POST['password'].encode(), bcrypt.gensalt())
     user = User.objects.create(first_name=request.POST['first_name'], last_name=request.POST['last_name'], password=hashed_password.decode('utf-8'), email=request.POST['email'])
     user.save()
