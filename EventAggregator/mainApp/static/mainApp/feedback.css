@@ -291,3 +291,8 @@ body {
     font-size: 15px;
   }
   }
+
+.form_area {
+width:100%;
+text-align:center;
+}

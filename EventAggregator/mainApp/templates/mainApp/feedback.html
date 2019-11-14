@@ -39,17 +39,15 @@
                 <form class="form" action="/contact" method="post">
                     {% csrf_token %}
                     {{ form.non_field_errors }}
-                    <div>
-                      <label for="id_subject">Тема:</label>
+                    <div class="form_area">
                       {{ form.subject.errors }}
                       {# {{ form.subject }} #}
-                      <input type="text" placeholder="Введите тему вопроса" id="id_subject" name="subject"  class="form-input">
+                      <input type="text" placeholder="Тема" id="id_subject" name="subject"  class="form-input">
                     </div>
-                    <div>
-                      <label for="id_message">Вопрос:</label>
+                    <div class="form_area">
                       {{ form.message.errors }}
                       {# {{ form.message }} #}
-                      <textarea placeholder="Напишите ваш вопрос" id="id_message" name="message" class="form-textarea" ></textarea>
+                      <textarea placeholder="Ваш вопрос" id="id_message" name="message" class="form-textarea" ></textarea>
                     </div>
                     <button type="submit" class="my_btn">Отправить</button>
                 </form>
