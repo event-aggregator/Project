@@ -54,10 +54,15 @@ def meetup(url):
     data.drop(['urlname'], axis=1, inplace=True)
     return data
 
-def parser():
+def get_dataframe():
     url_timepad='https://api.timepad.ru/v1/events?fields=description_short%2C%20description_html%2Clocation%2C%20organization&limit=100&skip=0&category_ids=452&access_statuses=public&moderation_statuses=featured%2C%20shown'
     url_meetup='https://api.meetup.com/find/upcoming_events?&sign=true&photo-host=public&topic_category=34&page=1000&allMeetups=true'
     data=(pd.concat([meetup(url_meetup),timepad(url_timepad)], ignore_index=True,sort=False))
+    return data
+    
+
+def parser():
+    data=get_dataframe()
     data_json=data.to_json(force_ascii=False)
     return data_json
 
@@ -71,7 +76,4 @@ def cities():
             city.append(element)
     city.remove('Онлайн')
     return city
-          
-
-    
     
