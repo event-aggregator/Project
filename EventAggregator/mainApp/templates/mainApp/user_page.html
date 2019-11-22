@@ -34,22 +34,25 @@
         </div>
 
         <div class="user_info">
-            <h3> Имя:  <strong>{{user.first_name}}</strong> </h3>
-            <h3> Фамилия: <strong>{{user.last_name}}</strong> </h3>
-            <h3> Email: <strong>{{user.email}}</strong> </h3>
+            <h3> Имя:  <strong class="db">{{user.first_name}}</strong> </h3>
+            <h3> Фамилия: <strong class="db">{{user.last_name}}</strong> </h3>
+            <h3> Email: <strong class="db">{{user.email}}</strong> </h3>
             <h3> Города:
-                <strong> {% for city in cities %}
-                    {{ city.name }}
+                {% for city in cities %}
+                <strong class="db">
+                    {{ city.name }};
                 </strong>
                 {% endfor %} </h3>
             <h3> Языки:
-                <strong> {% for lang in languages %}
-                    {{ lang.name }}
+                {% for lang in languages %}
+                <strong class="db">
+                    {{ lang.name }};
                 </strong>
                 {% endfor %} </h3>
             <h3> Сферы:
-                <strong> {% for area in areas %}
-                    {{ area.name }}
+                {% for area in areas %}
+                <strong class="db">
+                    {{ area.name }};
                 </strong>
                 {% endfor %} </h3>
         </div>
