@@ -1,6 +1,7 @@
 import json, requests
 import pandas as pd
 import numpy as np
+import re
 from pandas.io.json import json_normalize
 
 def timepad(url):
@@ -54,16 +55,40 @@ def meetup(url):
     data.drop(['urlname'], axis=1, inplace=True)
     return data
 
+def clean_tweet(tweet):
+    if pd.isna(tweet)==False :
+        tweet = re.sub('href\S+\s*', '', tweet)
+        tweet = re.sub('\s\w\s', ' ', tweet)
+        tweet = re.sub("\d+|-\d+", ' ',tweet)
+        tweet = re.sub('<\w*\s\w+\W+\s*\w+\W+\w*\W*\w*\W+>', ' ', tweet)
+        tweet = re.sub('</*\w*/*>*', ' ', tweet)
+        tweet = re.sub('&\w+', ' ', tweet)
+        tweet = re.sub('\W{2}', ' ', tweet)
+        tweet = re.sub('\n', ' ', tweet)
+        tweet = re.sub('\t', ' ', tweet) 
+        tweet = re.sub('\xa0', ' ', tweet)
+        tweet = re.sub('-грабл', ' ', tweet)
+        tweet = re.sub('\[\w+\]',' ', tweet) 
+        tweet = re.sub('•|//|\*|=+|↔|--|——| –| —| -| -',' ',tweet)
+        tweet = re.sub('@\S+', '', tweet)
+        tweet = re.sub('style|text|align| scr |justify| с | pm |gdg| sb |rte|width|font|—| gc |size|bgcolor|dcdcdc|rsvp|height| alt | px | src |colspan| st | spb |class| gt | lt | br | p |center|left', ' ', tweet)
+    return tweet 
+
 def get_dataframe():
     url_timepad='https://api.timepad.ru/v1/events?fields=description_short%2C%20description_html%2Clocation%2C%20organization&limit=100&skip=0&category_ids=452&access_statuses=public&moderation_statuses=featured%2C%20shown'
     url_meetup='https://api.meetup.com/find/upcoming_events?&sign=true&photo-host=public&topic_category=34&page=1000&allMeetups=true'
     data=(pd.concat([meetup(url_meetup),timepad(url_timepad)], ignore_index=True,sort=False))
+    data=data.T
+    for i in range(len(data.columns)):
+        data.loc['description',i] = clean_tweet(data.loc['description',i])
     return data
-    
 
 def parser():
     data=get_dataframe()
-    data_json=data.to_json(force_ascii=False)
+    events=[]
+    for i in range(len(data.columns)):
+        events.append(data[i].to_dict())
+    data_json= {'events':events}
     return data_json
 
 def cities():
@@ -76,4 +101,3 @@ def cities():
             city.append(element)
     city.remove('Онлайн')
     return city
-    
