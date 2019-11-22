@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import logout
-from database.models import Client, Cities, ClientCities
+from database.models import Client, Cities, Areas, Languages, ClientCities, ClientAreas, ClientLanguages
 from .forms import ContactForm
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.mail import send_mail, BadHeaderError
@@ -28,35 +28,39 @@ def feedback(request):
 def user_page(request):
     user = Client.objects.get(email=request.session['email'])
     cities = ClientCities.objects.filter(user_email=user.email)
-    print(cities)
     all_cities = []
     for city in cities:
-
-        #создаем словарь
+        city1 = Cities.objects.filter(id=city.city_id_id).first()
         city_info = {
-            'city': city.city_name,
+            'name': city1.name,
         }
         all_cities.append(city_info)
 
+    areas = ClientAreas.objects.filter(user_email=user.email)
+    all_areas = []
+    for area in areas:
+        area1 = Areas.objects.filter(id=area.area_id_id).first()
+        area_info = {
+            'name': area1.name,
+        }
+        all_areas.append(area_info)
+
+    languages = ClientLanguages.objects.filter(user_email=user.email)
+    all_langs = []
+    for lang in languages:
+        lang1 = Languages.objects.filter(id=lang.language_id_id).first()
+        lang_info = {
+            'name': lang1.name,
+        }
+        all_langs.append(lang_info)
+
     context = {
         "user": user,
-        "cities": all_cities
+        "cities": all_cities,
+        "areas": all_areas,
+        "languages": all_langs
     }
     return render(request, 'mainApp/user_page.html', context)
-
-def cities(request):
-    # user = Client.objects.filter(email=request.session['email']).first()
-    # for i in request.POST.getlist('cities'):
-    #     city = Cities.objects.filter(name=i).first()
-    #     user.cities.add(city)
-    #     user.save()
-    # return redirect('/user_page')
-    user = Client.objects.filter(email=request.session['email']).first()
-    for i in request.POST.getlist('cities'):
-        city = Cities.objects.filter(name=i).first()
-        city1 = ClientCities(user_email=user, city_name=city)
-        city1.save()
-    return redirect('/user_page')
 
 
 def contact(request):

@@ -33,6 +33,16 @@
 
 }
 
+.r_interests {
+
+  background: url("https://sun9-12.userapi.com/c855524/v855524807/147ff2/oFT4LBSpGAg.jpg");
+  background-size: 100%;
+  background-repeat: repeat-x;
+  background-position: center;
+  background-color: #f7f7f7;
+
+}
+
 .form-container {
   background-color: #fff;
   max-width: 80%;
@@ -75,7 +85,7 @@ input:focus {
     font-size: 15px;
     cursor: pointer;
     margin-bottom: 10px;
-    margin-top: 10px;
+    margin-top: 5%;
     border: 2px solid #217cd7;
     font-weight: bold;
     background-color: #217cd7;
@@ -97,6 +107,67 @@ input:focus {
 .text_success {
     color: #217cd7;
 }
+
+h3 {
+  text-align: center;
+  margin: 5% 0;
+}
+
+.screen-reader-text {
+height: auto;
+width: 1px;
+clip: rect(1px, 1px, 1px, 1px);
+height: 1px;
+overflow: hidden;
+position: absolute !important;
+}
+
+.form .chosen-container {
+font-size: 18px;
+min-width: 100% !important;
+
+}
+.form .chosen-container .chosen-single,
+.form .chosen-container .chosen-drop {
+border: none;
+border-radius: 0;
+box-shadow: none;
+}
+.form .chosen-container-active.chosen-with-drop .chosen-single,
+.form .chosen-container-active .chosen-choices {
+border: none;
+border-radius: 0;
+box-shadow: none;
+}
+.form .chosen-container-active .chosen-results .highlighted {
+background: #217cd7;
+}
+
+/*FOOTER*/
+footer {
+background: #000;
+display: block;
+justify-content: space-between;
+padding-top: 1%;
+padding-bottom: 1%;
+width: 100%;
+max-height: 130px;
+}
+
+footer p {
+  color: white;
+  margin-left: 3%;
+  text-align: center;
+}
+
+.github {
+  float: right;
+  margin-right: 1%;
+  font-size: 40px;
+  color: #fff;
+  text-decoration: none;
+}
+
 
 @media (max-width: 800px) {
     .rightside {

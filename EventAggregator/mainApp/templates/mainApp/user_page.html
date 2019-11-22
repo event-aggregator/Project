@@ -9,11 +9,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.min.css">
         <link rel="stylesheet" href="{% static 'mainApp/user_page.css' %}">
-        {% block extrahead %}
-        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.js"></script>
-        <script src="{% static 'mainApp/cities.js' %}"></script>
-        {% endblock extrahead %}
+
     </head>
 
     <body>
@@ -45,50 +41,17 @@
                 <strong> {% for city in cities %}
                     {{ city.name }}
                 </strong>
-                {% endfor %}
-            </h3>
-            <form class="form" id="foo_form" action="/cities" method="post">
-                {% csrf_token %}
-                        <label for="foo_select" class="screen-reader-text">Выберите интересующие Вас города</label>
-                        <select name="cities" id="foo_select" class="dropdown" form="foo_form" multiple data-placeholder="Выберите интересующие Вас города...">
-                                <option value="Москва" name="cities">Москва</option>
-                                <option value="Санкт-Петербург" name="cities">Санкт-Петербург</option>
-                                <option value="Новосибирск" name="cities">Новосибирск</option>
-                                <option value="Екатеринбург" name="cities">Екатеринбург</option>
-                                <option value="Нижний Новгород" name="cities">Нижний Новгород</option>
-                                <option value="Казань" name="cities">Казань</option>
-                                <option value="Уфа" name="cities">Уфа</option>
-                                <option value="Сочи" name="cities">Сочи</option>
-                                <option value="Воронеж" name="cities">Воронеж</option>
-                                <option value="Саратов" name="cities">Саратов</option>
-                                <option value="Владивосток" name="cities">Владивосток</option>
-                                <option value="Омск" name="cities">Омск</option>
-                                <option value="Краснодар" name="cities">Краснодар</option>
-                                <option value="Челябинск" name="cities">Челябинск</option>
-                                <option value="Стерлитамак" name="cities">Стерлитамак</option>
-                                <option value="Мурманск" name="cities">Мурманск</option>
-                        </select>
-                         <input type="submit" style=" background:transparent;margin-left: 110px; font-size: 35px;" id="submit"
-                            value="Submit">
-                    </form>
-                    <h3> Сферы</h3>
-                    <form class="form" id="foo_form">
-                                <label for="foo_select" class="screen-reader-text">Выберите интересующие Вас сферы</label>
-                                <select id="foo_select" class="dropdown" form="foo_form" multiple data-placeholder="Выберите интересующие Вас города...">
-                                        <option value="UI/UX">UI/UX</option>
-                                        <option value="Frontend">Frontend</option>
-                                        <option value="Backend">Backend</option>
-                                        <option value="IoT">IoT</option>
-                                        <option value="Machine Learning">Machine Learning</option>
-                                        <option value="Data Science">Data Science</option>
-                                        <option value="DEvOps">DevOps</option>
-                                        <option value="Software">Software</option>
-                                        <option value="Big Data">Big Data</option>
-                                        <option value="GameDev">GameDev</option>
-                                        <option value="Mobile Development"> Mobile Development</option>
-                                        <option value="Information Security">Information Security</option>
-                                </select>
-                            </form>
+                {% endfor %} </h3>
+            <h3> Языки:
+                <strong> {% for lang in languages %}
+                    {{ lang.name }}
+                </strong>
+                {% endfor %} </h3>
+            <h3> Сферы:
+                <strong> {% for area in areas %}
+                    {{ area.name }}
+                </strong>
+                {% endfor %} </h3>
         </div>
         </div>
 
