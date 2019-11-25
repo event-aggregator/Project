@@ -1,0 +1,12 @@
+gensim==3.8.1
+mpmath==1.0.0
+nltk==3.3
+numpy==1.15.4
+pandas==0.23.4
+pyLDAvis==2.1.2
+pymorphy2==0.8
+pymorphy2-dicts==2.4.393442.3710985
+pymorphy2-dicts-ru==2.4.404381.4453942
+scikit-learn==0.21.3
+snowballstemmer==1.2.1
+sortedcollections==1.0.1
