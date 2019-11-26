@@ -25,6 +25,7 @@ def timepad(url):
     data = data[data.country == 'Россия'] #Оставляю только мероприятия в России
     data.drop(['starts_at','country'],axis=1,inplace=True) #Удаление теперь ненужных колонок
     data.loc[data.city == 'Без города', 'city'] = 'Онлайн' #Всё, что без города - онлайн мероприятия
+    data.image=pd.Series(data['image']).str.replace('//',' ',regex=False)
     return data
 
 def meetup(url):
@@ -44,7 +45,6 @@ def meetup(url):
     data=data.rename({'group.name': 'group_name','group.urlname':'urlname','local_date': 'date','local_time': 'time','status':'address','visibility':'image'}, axis=1)
     data.address=data.apply(lambda x: f"{x['venue.address_1']} {x['venue.address_2']} {x['venue.name']}", axis=1) #Приходит аж 3 колонки с адресом, соединям их
     data.drop(['venue.address_1','venue.address_2','venue.name'], axis=1, inplace=True) #Удаляем то, что соединили
-    data.address=pd.Series(data['address']).str.replace('nan', ' ',regex=False)
     for urlname in data.urlname: #Картиночки
         url_image= 'https://api.meetup.com/'+urlname+'/photos?&sign=true&photo-host=public&page=2'
         response=requests.get(url_image).json()
@@ -58,6 +58,8 @@ def meetup(url):
 def clean_tweet(tweet):
     if pd.isna(tweet)==False :
         tweet = re.sub('href\S+\s*', '', tweet)
+        tweet = re.sub('www\s*', '', tweet)
+        tweet = re.sub('http\S+\s*', '', tweet) 
         tweet = re.sub('\s\w\s', ' ', tweet)
         tweet = re.sub("\d+|-\d+", ' ',tweet)
         tweet = re.sub('<\w*\s\w+\W+\s*\w+\W+\w*\W*\w*\W+>', ' ', tweet)
@@ -69,7 +71,6 @@ def clean_tweet(tweet):
         tweet = re.sub('\xa0', ' ', tweet)
         tweet = re.sub('-грабл', ' ', tweet)
         tweet = re.sub('\[\w+\]',' ', tweet) 
-        tweet = re.sub('•|//|\*|=+|↔|--|——| –| —| -| -',' ',tweet)
         tweet = re.sub('@\S+', '', tweet)
         tweet = re.sub('style|text|align| scr |justify| с | pm |gdg| sb |rte|width|font|—| gc |size|bgcolor|dcdcdc|rsvp|height| alt | px | src |colspan| st | spb |class| gt | lt | br | p |center|left', ' ', tweet)
     return tweet 
@@ -78,6 +79,8 @@ def get_dataframe():
     url_timepad='https://api.timepad.ru/v1/events?fields=description_short%2C%20description_html%2Clocation%2C%20organization&limit=100&skip=0&category_ids=452&access_statuses=public&moderation_statuses=featured%2C%20shown'
     url_meetup='https://api.meetup.com/find/upcoming_events?&sign=true&photo-host=public&topic_category=34&page=1000&allMeetups=true'
     data=(pd.concat([meetup(url_meetup),timepad(url_timepad)], ignore_index=True,sort=False))
+    data.address=pd.Series(data['address']).str.replace('nan', ' ',regex=False)
+    data.fillna(' ',inplace=True) 
     data=data.T
     for i in range(len(data.columns)):
         data.loc['description',i] = clean_tweet(data.loc['description',i])
