@@ -142,6 +142,30 @@ def LDA(df2, token, num):
                          per_word_topics=True)
     return lda_model, corpus
 
+def opt_num(corpus,token,dct,num):    
+    
+    lda_model0 = LDA(corpus, dct, num)
+    lda_model1 = LDA(corpus, dct, num-1)
+    lda_model2 = LDA(corpus, dct, num+1)
+    
+    coherence_model_lda0 = CoherenceModel(model=lda_model0, texts=token, dictionary=dct, coherence='c_v')
+    coherence0 = coherence_model_lda0.get_coherence()
+    coherence_model_lda1 = CoherenceModel(model=lda_model1, texts=token, dictionary=dct, coherence='c_v')
+    coherence1 = coherence_model_lda1.get_coherence()   
+    coherence_model_lda2 = CoherenceModel(model=lda_model2, texts=token, dictionary=dct, coherence='c_v')
+    coherence2 = coherence_model_lda2.get_coherence()    
+
+
+    if ((coherence0 > coherence1)and(coherence0 > coherence2)):
+        return lda_model0, num
+    else: 
+        if (coherence2 > coherence1):
+            lda_model0, num = opt_num(corpus,token,dct,num+1)
+            return lda_model0, num 
+        else: 
+            lda_model0, num = opt_num(corpus,token,dct,num-1)
+            return lda_model0, num  
+
 def format_topics_sentences(ldamodel, corpus, texts):
     # Init output
     sent_topics_df = pd.DataFrame()
@@ -163,7 +187,7 @@ def format_topics_sentences(ldamodel, corpus, texts):
     return(sent_topics_df)
 
 #программа
-#df = get_dataframe()
+#df = get_dataframe()# тут должна быть функци получения датасета мероприятий из бд?
 df1 = df.copy()
 df2 = df.copy()
 
@@ -173,11 +197,23 @@ df1 = data_preprocessing(df1)
 token = []
 df2, token = tf_idf(df1, df2)
 
-num = 12
-lda_model, corpus = LDA(df2, token, num)
+dct = corpora.Dictionary([df2['Combined'][0].split()])
+for i in range(df2.shape[0]):
+    dct.add_documents([df2['Combined'][i].split()])  
+corpus = [ dct.doc2bow(doc, allow_update=True) for doc in token]
+
+num = 10
+lda_model, num = opt_num(corpus,token,dct,num)
 #lda_model.print_topics(-1)
 
+#ключевые слова
+key = []
+for i in range (num):
+    wp = lda_model.show_topic(i)
+    topic_keywords = ", ".join([word for word, prop in wp])
+    key.append(topic_keywords)
 
+#датафрейм с номером мероприятия и соответствующей темы    
 df_topic_sents_keywords = format_topics_sentences(lda_model, corpus, token)
 # Format
 df_dominant_topic = df_topic_sents_keywords.reset_index()
@@ -190,6 +226,6 @@ df_dominant_topic.columns = ['Document_No', 'Dominant_Topic', 'Topic_Perc_Contri
 #важно! данные вносить в бд
 #соответствие номера мероприятия с номером темы
 df3=df_dominant_topic.copy()
-df3.drop(["Topic_Perc_Contrib", "Keywords","Text"], axis = 1, inplace = True) 
+df3.drop(["Topic_Perc_Contrib","Keywords","Text"], axis = 1, inplace = True) #остается Document_No и Dominant_Topic
 #print(df3)
 
