@@ -1,3 +1,9 @@
+pro
+art
+finish
+tverskaya
+wiki
+petersburg
 russian
 coffe
 coff
