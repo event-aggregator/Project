@@ -39,10 +39,21 @@
             <h3> Фамилия: <strong  class="db">{{user.last_name}}</strong> </h3>
             <h3> Email: <strong  class="db">{{user.email}}</strong> </h3>
             <h3> Города: <strong  class="db">{{user.cities}}</strong> </h3>
-            <h3> Темы: <strong  class="db">{{user.areas}}</strong> </h3>
+            <h3> Языки: <strong  class="db">{{user.languages}}</strong> </h3>
+            <h3> Сферы: <strong  class="db">{{user.spheres}}</strong> </h3>
 
-     
 	
+      </div>
+    
+      <h1 class="sls">ПРЕДСТОЯЩИЕ МЕРОПРИЯТИЯ:</h1>
+      <div class="events">
+          {%for event in all_events%}
+          <div class="event">
+            <h2 class="event_title">{{event.title}}</h2>
+            <h2 class="event_date">{{event.date}}</h2>
+            <h2 class="event_info"><a href="{{event.link }}">Подробнее</a></h2>
+          </div>
+          {%endfor%}
       </div>
         
         <footer class="cite_footer">
