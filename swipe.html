@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Подбор мероприятий - Агрегатор мероприятий</title>
+
+        <link href="swipe.css" type="text/css" rel="stylesheet" />
+
+        <script type="text/javascript" src="https://hammerjs.github.io/dist/hammer.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    </head>
+    <body>
+        <div class="header">
+            <nav class="top-menu">
+                    <a class="navbar-logo" href=""><img src=""></a>
+                    <ul class="menu-main">
+                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-home"></i> </a> <a class="text_nav" href=""> Главная </a></li>
+                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-user-circle"></i> </a> <a class="text_nav" href=""> Мой профиль  </a></li>
+                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-calendar"></i> </a> <a class="text_nav" href=""> Агрегатор  </a></li>
+                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-question"></i> </a> <a class="text_nav" href=""> FAQ  </a></li>
+                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-envelope"></i>  </a> <a class="text_nav" href=""> Обратная связь</a></li>
+                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-sign-out"></i>  </a> <a href="#" class="logout text_nav" >Выход</a></li>
+                    </ul>
+                    
+            </nav>
+        </div>
+        <div class="swipe">
+
+            <div class="result">
+                <ul class="liked-cards">
+                    Liked: 
+                </ul>
+            </div>
+
+            <div class="swipe--status">
+                <i class="fa fa-remove"></i>
+                <i class="fa fa-heart"></i>
+            </div>
+            
+            <div class="swipe--cards">
+                <div class="swipe--card">
+                    <img class="swipe--img" src="https://images.nudge.ai/Image/Article/10023746">
+                    <h4 class="demo--name">DEMO CARD 1</h4>
+                    <p>Description of event</p>
+                </div>
+                <div class="swipe--card">
+                    <img class="swipe--img" src="https://prjctr.com.ua/assets/events/741/59fa0af8a22a5/bogdan_repeh.png">
+                    <h4 class="demo--name">DEMO CARD 2</h4>
+                    <p>Description of event</p>
+                </div>
+                <div class="swipe--card">
+                    <img class="swipe--img" src="https://skladchik.com/proxy.php?image=http%3A%2F%2Fcourses.say-hi.me%2Fwp-content%2Fuploads%2F2015%2F11%2FStas-Kislyi_cover.jpg&hash=c37fded1c49b960ad02b8f9573ba7fff">
+                    <h4 class="demo--name">DEMO CARD</h4>
+                    <p>Description of event</p>
+                </div>
+                <div class="swipe--card">
+                    <img class="swipe--img" src="https://coindar.org/images/upload/tNVNnTixewhyBRFS/image.bDtOpOCoUN8CdpFcKAZc.png">
+                    <h4 class="demo--name">DEMO CARD 4</h4>
+                    <p>Description of event</p>
+                </div>
+                <div class="swipe--card">
+                    <img class="swipe--img" src="http://znaigorod.ru/storage/w/files/845193/region/1803/2425/101/105/360-488!/%D1%85%D0%B0%D0%BA%D0%B0%D1%82%D0%BE%D0%BD_%D0%B1%D0%B0%D0%BD%D0%BD%D0%B5%D1%80_%D0%B7%D0%BD%D0%B0%D0%B9.jpg">
+                    <h4 class="demo--name">DEMO CARD 5</h4>
+                    <p>Description of event</p>
+                </div>
+
+                <div class="swipe--card">
+                    <img class="swipe--img" src="https://static.tildacdn.com/tild3465-6336-4830-b761-343637333836/hackathon_5.png">
+                    <h4 class="demo--name">DEMO CARD 6</h4>
+                    <p>Description of event</p>
+                </div>
+                <div class="swipe--card">
+                    <img class="swipe--img" src="https://uaevent.com/files/event/9/20439/header_20439_s.jpg">
+                    <h4 class="demo--name">DEMO CARD 7</h4>
+                    <p>Description of event</p>
+                </div>
+                <div class="swipe--card">
+                    <img class="swipe--img" src="https://uaevent.com/files/event/7/5147/header_5147_s.jpg">
+                    <h4 class="demo--name">DEMO CARD 8</h4>
+                    <p>Description of event</p>
+                </div>
+                <div class="swipe--card">
+                    <img class="swipe--img" src="https://pbs.twimg.com/media/D8XO8lgWwAA_F18.jpg">
+                    <h4 class="demo--name">DEMO CARD 9</h4>
+                    <p>Description of event</p>
+                </div>
+                <div class="swipe--card">
+                    <img class="swipe--img" src="https://itstep.by/wp-content/uploads/2016/09/%D1%82%D0%B5%D1%85.-%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D1%80%D1%8B-2-999x665.jpg">
+                    <h4 class="demo--name">DEMO CARD 10</h4>
+                    <p>Description of event</p>
+                </div>
+
+            </div>
+            
+            <div class="swipe--buttons">
+                <button id="nope"><i class="fa fa-remove"></i></button>
+                <button id="love"><i class="fa fa-heart"></i></button>
+            </div>
+        </div>
+        <script src='swipe.js'></script>
+    </body>
+</html>

@@ -1,0 +1,221 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+body {
+    margin: 0;
+    background-color: #f7f7f7;
+    font-family: "Segoe UI";
+    overflow: hidden;
+}
+h4 {
+    margin-top: 5%;
+}
+
+/*MENU HEADER*/
+.top-menu {
+    background: #000;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    width: 100%;
+    max-height: 100px;
+    text-transform: uppercase;
+}
+    
+.top-menu:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+    
+.navbar-logo {
+      display: inline-block;
+}
+.menu-main {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.menu-main li {
+      display: inline-block;
+}
+    
+.menu-main a {
+    text-decoration: none;
+    line-height: 61px;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #fff;
+}
+    
+.menu-main a:hover {
+      color: #217cd7;
+}
+    
+nav li:not(:first-child):before {
+      color: #fff;
+      content: " | ";
+}
+    
+    
+.picture_nav {
+    display: none;
+}
+.swipe {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+}
+  
+.loaded.swipe {
+    opacity: 1;
+}
+  
+.swipe--status {
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;
+    z-index: 2;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+}
+  
+.swipe--status i {
+    font-size: 100px;
+    opacity: 0;
+    transform: scale(0.3);
+    transition: all 0.2s ease-in-out;
+    position: absolute;
+    width: 100px;
+    margin-left: -50px;
+}
+  
+.swipe_love .fa-heart {
+    opacity: 0.7;
+    transform: scale(1);
+}
+  
+.swipe_nope .fa-remove {
+    opacity: 0.7;
+    transform: scale(1);
+}
+  
+.swipe--cards {
+    flex-grow: 1;
+    padding-top: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 1;
+}
+  
+.swipe--card {
+    display: inline-block;
+    width: 85vw;
+    margin-top: 0px;
+    max-width: 470px;
+    height: 58vh;
+    background: #FFFFFF;
+    padding-bottom: 40px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: absolute;
+    will-change: transform;
+    transition: all 0.3s ease-in-out;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    cursor: grab;
+}
+
+.swipe--img{
+    object-fit: cover;
+    width: 600px;
+    height: 250px;
+}
+
+  
+.moving.swipe--card {
+    transition: none;
+    cursor: -webkit-grabbing;
+    cursor: -moz-grabbing;
+    cursor: grabbing;
+}
+  
+.swipe--card img {
+    max-width: 100%;
+    pointer-events: none;
+}
+  
+.swipe--card h3 {
+    margin-top: 32px;
+    font-size: 32px;
+    padding: 0 16px;
+    pointer-events: none;
+}
+  
+.swipe--card p {
+    margin-top: 24px;
+    font-size: 20px;
+    padding: 0 16px;
+    pointer-events: none;
+}
+  
+.swipe--buttons {
+    flex: 0 0 190px;
+    text-align: center;
+    padding-top: 20px;
+}
+  
+.swipe--buttons button {
+    border-radius: 50%;
+    line-height: 60px;
+    width: 60px;
+    border: 0;
+    background: #FFFFFF;
+    display: inline-block;
+    margin: 0 8px;
+}
+  
+.swipe--buttons button:focus {
+    outline: 0;
+}
+  
+.swipe--buttons i {
+    font-size: 32px;
+    vertical-align: middle;
+}
+  
+.fa-heart {
+    color: #FFACE4;
+}
+  
+.fa-remove {
+    color: #CDD6DD;
+}
+
+.result {
+    display: none;
+    padding: 10px 40px;
+}
+.result_shown {
+    display: block;
+}
+.result ul {
+    margin-bottom: 40px;
+}
+.result * {
+    font-size: 16px;
+}
