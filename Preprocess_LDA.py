@@ -120,11 +120,7 @@ def compute_tfidf(corpus):
         documents_list.append(tf_idf_dictionary)
     return documents_list
 
-def LDA(df2, token, num):
-    dct = corpora.Dictionary([df2['Combined'][0].split()])
-    for i in range(df2.shape[0]):
-        dct.add_documents([df2['Combined'][i].split()])  
-    corpus = [ dct.doc2bow(doc, allow_update=True) for doc in token]
+def LDA(corpus, dct, num):
     lda_model = LdaMulticore(corpus=corpus,
                          id2word=dct,
                          random_state=100,
@@ -140,7 +136,7 @@ def LDA(df2, token, num):
                          iterations=100,
                          gamma_threshold=0.001,
                          per_word_topics=True)
-    return lda_model, corpus
+    return lda_model
 
 def opt_num(corpus,token,dct,num):    
     
@@ -204,14 +200,6 @@ corpus = [ dct.doc2bow(doc, allow_update=True) for doc in token]
 
 num = 10
 lda_model, num = opt_num(corpus,token,dct,num)
-#lda_model.print_topics(-1)
-
-#ключевые слова
-key = []
-for i in range (num):
-    wp = lda_model.show_topic(i)
-    topic_keywords = ", ".join([word for word, prop in wp])
-    key.append(topic_keywords)
 
 #датафрейм с номером мероприятия и соответствующей темы    
 df_topic_sents_keywords = format_topics_sentences(lda_model, corpus, token)
@@ -226,6 +214,19 @@ df_dominant_topic.columns = ['Document_No', 'Dominant_Topic', 'Topic_Perc_Contri
 #важно! данные вносить в бд
 #соответствие номера мероприятия с номером темы
 df3=df_dominant_topic.copy()
+#!
 df3.drop(["Topic_Perc_Contrib","Keywords","Text"], axis = 1, inplace = True) #остается Document_No и Dominant_Topic
-#print(df3)
+#!
 
+#соответствие номера темы с ключевыми словами
+key = []
+for i in range (num):
+    wp = lda_model.show_topic(i)
+    topic_keywords = ", ".join([word for word, prop in wp])
+    key.append(topic_keywords)
+d = pd.DataFrame()
+for i in range (num):
+    d = d.append(pd.Series([i, key[i]]), ignore_index=True)         
+#!
+d.columns = ['num', 'Keywords'] #заносить в бд 
+#!
