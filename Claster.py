@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[22]:
-
-
 import re
 import nltk
 from nltk import SnowballStemmer
@@ -14,7 +11,7 @@ from sklearn.cluster import KMeans
 def preprocessing(line):
     for i in range(len(line)):
         line[i]= line[i].lower()
-        line[i] = re.sub('[%s]' % re.escape(",."), ' ', line[i]) # удалит символы пунктуации
+        line[i] = re.sub('[%s]' % re.escape(",.()"), ' ', line[i]) # удалит символы пунктуации
         line[i] = stemmer.stem(line[i])
     return line
 
@@ -59,5 +56,6 @@ while top == 10:
     else:
         i+=1
 #важно! данные для анализа
-#top - номер подходящей темы
-
+#!
+#v[i] - номер подходящей темы
+#!
