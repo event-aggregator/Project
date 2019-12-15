@@ -25,9 +25,10 @@ stemmer = SnowballStemmer("english")
 #key - ключевые слова для каждой темы в формате list (key[i] - список ключевый слов i темы, key[i][j] - j ключевое слово в i теме)
 #конец блока
 
-def clast(user, key,num):
+def clast(user, key):
 
     #кластеризация интересов и тем   
+    num = len(key)
     key_pr = []
     user_pr = []
     key_pr = key.copy()
