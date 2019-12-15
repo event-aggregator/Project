@@ -4,11 +4,14 @@
 import pandas as pd
 import re
 import math
+import Gets 
+import json, requests
 import nltk
 from nltk import SnowballStemmer
 from random import randint
 from random import choice
 from collections import Counter
+from pandas.io.json import json_normalize
 from sklearn.feature_extraction.text import CountVectorizer
 
 # Gensim
@@ -182,51 +185,50 @@ def format_topics_sentences(ldamodel, corpus, texts):
     sent_topics_df = pd.concat([sent_topics_df, contents], axis=1)
     return(sent_topics_df)
 
-#программа
-#df = get_dataframe()# тут должна быть функци получения датасета мероприятий из бд?
-df1 = df.copy()
-df2 = df.copy()
+def analysis():
+    df = Gets.get_dataframe()# тут должна быть функци получения датасета мероприятий из бд?
+    df = df.T
+    df1 = df.copy()
+    df2 = df.copy()
 
-df2 = format_dataset(df2)
-df1 = data_preprocessing(df1)
+    df2 = format_dataset(df2)
+    df1 = data_preprocessing(df1)
 
-token = []
-df2, token = tf_idf(df1, df2)
+    token = []
+    df2, token = tf_idf(df1, df2)
 
-dct = corpora.Dictionary([df2['Combined'][0].split()])
-for i in range(df2.shape[0]):
-    dct.add_documents([df2['Combined'][i].split()])  
-corpus = [ dct.doc2bow(doc, allow_update=True) for doc in token]
-
-num = 10
-lda_model, num = opt_num(corpus,token,dct,num)
-
-#датафрейм с номером мероприятия и соответствующей темы    
-df_topic_sents_keywords = format_topics_sentences(lda_model, corpus, token)
-# Format
-df_dominant_topic = df_topic_sents_keywords.reset_index()
-df_dominant_topic.columns = ['Document_No', 'Dominant_Topic', 'Topic_Perc_Contrib', 'Keywords', 'Text']
-# Show
-#df_dominant_topic.head(689)
+    dct = corpora.Dictionary([df2['Combined'][0].split()])
+    for i in range(df2.shape[0]):
+        dct.add_documents([df2['Combined'][i].split()])  
+    corpus = [ dct.doc2bow(doc, allow_update=True) for doc in token]
+    num = 10
+    lda_model, num = opt_num(corpus,token,dct,num)
+    return lda_model, num, corpus,token
 
 
-
-#важно! данные вносить в бд
+def mero_topick():
 #соответствие номера мероприятия с номером темы
-df3=df_dominant_topic.copy()
-#!
-df3.drop(["Topic_Perc_Contrib","Keywords","Text"], axis = 1, inplace = True) #остается Document_No и Dominant_Topic
-#!
+    lda_model, num, corpus,token = analysis()
+    df_topic_sents_keywords = format_topics_sentences(lda_model, corpus, token)
+    df_dominant_topic = df_topic_sents_keywords.reset_index()
+    df_dominant_topic.columns = ['Document_No', 'Dominant_Topic', 'Topic_Perc_Contrib', 'Keywords', 'Text']
+    df3=df_dominant_topic.copy()
+    df3.drop(["Topic_Perc_Contrib","Keywords","Text"], axis = 1, inplace = True) #остается Document_No и Dominant_Topic
+    df4 = df3.to_json(orient='values')
+    return df3
 
+
+def topick_key():
 #соответствие номера темы с ключевыми словами
-key = []
-for i in range (num):
-    wp = lda_model.show_topic(i)
-    topic_keywords = ", ".join([word for word, prop in wp])
-    key.append(topic_keywords)
-d = pd.DataFrame()
-for i in range (num):
-    d = d.append(pd.Series([i, key[i]]), ignore_index=True)         
-#!
-d.columns = ['num', 'Keywords'] #заносить в бд 
-#!
+    lda_model, num, corpus,token = analysis()
+    key = []
+    for i in range (num):
+        wp = lda_model.show_topic(i)
+        topic_keywords = ", ".join([word for word, prop in wp])
+        key.append(topic_keywords)
+    d = pd.DataFrame()
+    for i in range (num):
+        d = d.append(pd.Series([i, key[i]]), ignore_index=True)         
+    d.columns = ['num', 'Keywords']
+    df5 = d.to_json(orient='values')
+    return d
