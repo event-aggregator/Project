@@ -29,11 +29,11 @@ import pyLDAvis.gensim  # don't skip thise
 
 def format_dataset(df): 
     df = df.copy()
-    df.drop(["id", "address","date","time","link","image","city"], axis = 1, inplace = True) 
+    df.drop(["address","date","time","link","image","city"], axis = 1, inplace = True) 
     for i in range(df.shape[0]):
         if pd.isna(df['description'][i])==True :
             df['description'][i] = 'No description'
-    df['Combined'] = df.fillna(' ').sum(axis=1)
+    df['Combined'] = df[['name','description','group_name']].fillna(' ').sum(axis=1)
     return(df)
 
 def assignment_sw():
@@ -214,6 +214,7 @@ def mero_topick():
     df_dominant_topic.columns = ['Document_No', 'Dominant_Topic', 'Topic_Perc_Contrib', 'Keywords', 'Text']
     df3=df_dominant_topic.copy()
     df3.drop(["Topic_Perc_Contrib","Keywords","Text"], axis = 1, inplace = True) #остается Document_No и Dominant_Topic
+    df3['Document_No'] = df['id']
     df4 = df3.to_json(orient='values')
     return df4
 
