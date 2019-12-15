@@ -215,7 +215,7 @@ def mero_topick():
     df3=df_dominant_topic.copy()
     df3.drop(["Topic_Perc_Contrib","Keywords","Text"], axis = 1, inplace = True) #остается Document_No и Dominant_Topic
     df4 = df3.to_json(orient='values')
-    return df3
+    return df4
 
 
 def topick_key():
@@ -231,4 +231,4 @@ def topick_key():
         d = d.append(pd.Series([i, key[i]]), ignore_index=True)         
     d.columns = ['num', 'Keywords']
     df5 = d.to_json(orient='values')
-    return d
+    return df5
