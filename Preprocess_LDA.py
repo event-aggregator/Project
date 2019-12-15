@@ -203,12 +203,12 @@ def analysis():
     corpus = [ dct.doc2bow(doc, allow_update=True) for doc in token]
     num = 10
     lda_model, num = opt_num(corpus,token,dct,num)
-    return lda_model, num, corpus,token
+    return df, lda_model, num, corpus,token
 
 
 def mero_topick():
 #соответствие номера мероприятия с номером темы
-    lda_model, num, corpus,token = analysis()
+    df, lda_model, num, corpus,token = analysis()
     df_topic_sents_keywords = format_topics_sentences(lda_model, corpus, token)
     df_dominant_topic = df_topic_sents_keywords.reset_index()
     df_dominant_topic.columns = ['Document_No', 'Dominant_Topic', 'Topic_Perc_Contrib', 'Keywords', 'Text']
@@ -221,7 +221,7 @@ def mero_topick():
 
 def topick_key():
 #соответствие номера темы с ключевыми словами
-    lda_model, num, corpus,token = analysis()
+    df, lda_model, num, corpus,token = analysis()
     key = []
     for i in range (num):
         wp = lda_model.show_topic(i)
