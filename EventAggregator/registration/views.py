@@ -70,12 +70,8 @@ def interests(request):
             city1 = ClientCities(user_email=user, city_id=city)
             city1.save()
 
-    print(request.POST)
     for i in request.POST.getlist('areas'):
         area = Areas.objects.filter(id=i).first()
-        print(i)
-        print(area)
-        print(user)
         if not ClientAreas.objects.filter(user_email=user, area_id=area).exists():
             area1 = ClientAreas(user_email=user, area_id=area)
             area1.save()

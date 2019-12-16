@@ -19,7 +19,7 @@
                     <ul class="menu-main">
                         <li><a class="picture_nav" href=""><i class="fa fa-fw fa-home"></i> </a> <a class="text_nav" href="/success"> Главная </a></li>
                         <li><a class="picture_nav" href=""><i class="fa fa-fw fa-user-circle"></i> </a> <a class="text_nav" href=""> Мой профиль  </a></li>
-                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-calendar"></i> </a> <a class="text_nav" href=""> Агрегатор  </a></li>
+                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-calendar"></i> </a> <a class="text_nav" href="/swipe"> Агрегатор  </a></li>
                         <li><a class="picture_nav" href=""><i class="fa fa-fw fa-question"></i> </a> <a class="text_nav" href="/faq"> FAQ  </a></li>
                         <li><a class="picture_nav" href=""><i class="fa fa-fw fa-envelope"></i>  </a> <a class="text_nav" href="/feedback"> Обратная связь</a></li>
                         <li><a class="picture_nav" href=""><i class="fa fa-fw fa-sign-out"></i>  </a> <a href="/logout" class="logout text_nav" >Выход</a></li>
@@ -57,6 +57,17 @@
                 {% endfor %} </h3>
         </div>
         </div>
+
+         <h1 class="sls">ПРЕДСТОЯЩИЕ МЕРОПРИЯТИЯ:</h1>
+      <div class="events">
+          {%for event in events%}
+          <div class="event">
+            <h2 class="event_title">{{event.name}}</h2>
+            <h2 class="event_date">{{event.date}}</h2>
+            <h2 class="event_info"><a href="{{event.link}}">Подробнее</a></h2>
+          </div>
+          {%endfor%}
+      </div>
 
 
 

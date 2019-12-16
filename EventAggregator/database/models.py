@@ -14,9 +14,15 @@ class Cities(models.Model):
 
 
 class Events(models.Model):
+    id = models.CharField(max_length=100,primary_key=True)
     name = models.CharField(max_length=200)
     description = models.TextField()
     date = models.DateTimeField()
+    address = models.CharField(max_length=200, blank=True)
+    link = models.TextField()
+    image = models.TextField(blank=True)
+    theme = models.IntegerField(blank=True,default=None,null=True)
+
     # languages = models.ManyToManyField(Languages)
     # areas = models.ManyToManyField(Areas)
     # cities = models.ManyToManyField(Cities)

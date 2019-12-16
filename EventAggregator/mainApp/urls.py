@@ -8,4 +8,7 @@ urlpatterns = [
     path('feedback', views.feedback),
     path('user_page', views.user_page),
     path('contact', views.contact),
+    path('parser', views.import_events),
+    path('swipe', views.swipe),
+    path('abc', views.abc)
 ]
