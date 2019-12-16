@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-
+import django_heroku
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -37,8 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'aggregator',
+    'mainApp',
     'registration',
+    'database',
 ]
 
 MIDDLEWARE = [
@@ -75,14 +76,25 @@ WSGI_APPLICATION = 'EventAggregator.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'postgres',
+#         'USER': 'postgres',
+#         'PASSWORD': '2910',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5433',
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': '2910',
-        'HOST': '127.0.0.1',
-        'PORT': '5433',
+        'NAME': 'df5ccjm036hh8t',
+        'USER': 'ddsnzcycwwwoff',
+        'PASSWORD': '425e39137579a75bbd497396c789f33c6cfad780c5e4ea67ebdc3184c64555f2',
+        'HOST': 'ec2-54-243-198-191.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -122,5 +134,15 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+
+EMAIL_HOST = 'smtp.mail.ru'
+EMAIL_HOST_USER = 'event_aggregator@mail.ru'
+EMAIL_HOST_PASSWORD = 'spbu_2019'
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+DEFAULT_FROM_EMAIL = 'event_aggregator@mail.ru'
+
+
+django_heroku.settings(locals())

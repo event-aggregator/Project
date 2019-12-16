@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        {% load static %}
+        <title>Интересы - Агрегатор мероприятий</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.min.css">
+
+        <link rel="stylesheet" href="{% static 'registration/registration.css' %}">
+         {% block extrahead %}
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.js"></script>
+
+        <script src="{% static 'registration/cities.js' %}"></script>
+        {% endblock extrahead %}
+    </head>
+
+    <body>
+        <div class="row no-gutters">
+            <div class="col-md-6  col no-gutters">
+              <div class="leftside d-flex justify-content-center align-items-center">
+                <div class="form-container rounded p-5">
+                  <form action="/interests" method="post" class="form" id="foo_form">
+                      {% csrf_token %}
+                    <h1 class="form__heading text-center pb-4">Последний шаг - добавьте: </h1>
+                    <h3> Города</h3>
+                        <label for="foo_select" class="screen-reader-text">Выберите интересующие Вас города</label>
+                        <select name="cities" id="foo_select" class="dropdown" form="foo_form" multiple data-placeholder="Выберите интересующие Вас города...">
+                               {% for city in cities %}
+                                        <option value={{ city.id }} name="cities">{{ city.name }}</option>
+                               {% endfor %}
+                        </select>
+
+                    <h3> Сферы</h3>
+
+                                <select name="areas" id="foo_select1" class="dropdown" form="foo_form" multiple data-placeholder="Выберите интересующие Вас темы...">
+                                       {% for area in areas %}
+                                        <option value="{{ area.id }}" name="areas">{{ area.name }}</option>
+                                        {% endfor %}
+                                </select>
+
+                       <h3> Языки</h3>
+
+                                <select name="languages" id="foo_select2" class="dropdown" form="foo_form" multiple data-placeholder="Выберите интересующие Вас темы...">
+                                        {% for lang in languages %}
+                                        <option value={{ lang.id }} name="languages">{{ lang.name }}</option>
+                                        {% endfor %}
+                                </select>
+
+
+                    <button type="submit" class="my_btn" aria-label="Create Account Button">Сохранить</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 no-gutters">
+              <div class="rightside r_interests d-flex justify-content-center align-items-center">
+              </div>
+            </div>
+          </div>
+    </body>
+
+    </html>

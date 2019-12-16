@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        {% load static %}
+        <title>Подбор мероприятий - Агрегатор мероприятий</title>
+
+        <link href="{% static 'mainApp/swipe.css' %}" type="text/css" rel="stylesheet" />
+
+        {% block extrahead %}
+        <script type="text/javascript" src="https://hammerjs.github.io/dist/hammer.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    </head>
+    <body>
+        <div class="header">
+            <nav class="top-menu">
+                    <a class="navbar-logo" href=""><img src=""></a>
+                    <ul class="menu-main">
+                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-home"></i> </a> <a class="text_nav" href="/success"> Главная </a></li>
+                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-user-circle"></i> </a> <a class="text_nav" href="/user_page"> Мой профиль  </a></li>
+                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-calendar"></i> </a> <a class="text_nav" href=""> Агрегатор  </a></li>
+                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-question"></i> </a> <a class="text_nav" href="/faq"> FAQ  </a></li>
+                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-envelope"></i>  </a> <a class="text_nav" href="/feedback"> Обратная связь</a></li>
+                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-sign-out"></i>  </a> <a href="/logout" class="logout text_nav" >Выход</a></li>
+                    </ul>
+
+            </nav>
+        </div>
+            <form action="/user_page" method="get">
+        <div class="swipe">
+
+            <div class="result">
+                <ul class="liked-cards">
+                    Liked:
+                </ul>
+            </div>
+
+            <div class="swipe--status">
+                <i class="fa fa-remove"></i>
+                <i class="fa fa-heart"></i>
+            </div>
+
+            <div class="swipe--cards">
+                {% for event in events %}
+                <div class="swipe--card" >
+                    <input type="hidden" class="demo--name" value="{{ event.id }}" name="fdf" >
+                    {% if event.image|length %}
+                    <img class="swipe--img" src="{{ event.image }}">
+                    {% else %}
+                    <img class="swipe--img" src="https://www.404camp.ru/sites/default/files/photo/logo/it-event.png">
+                    {% endif %}
+                    <h4 class="name">{{ event.name }}</h4>
+                    <p>{{ event.description }}</p>
+                </div>
+                {% endfor %}
+
+            </div>
+
+            <div class="swipe--buttons">
+                <button id="nope" type="submit"><i class="fa fa-remove"></i></button>
+                <button id="love" type="submit"><i class="fa fa-heart"></i></button>
+            </div>
+        </div>
+            </form>
+
+        <script src='{% static 'mainApp/swipe.js' %}'></script>
+        {% endblock extrahead %}
+    </body>
+</html>

@@ -1,0 +1,298 @@
+body {
+    margin: 0;
+    background-color: #f7f7f7;
+    font-family: "Segoe UI";
+  }
+
+
+
+
+  /*MENU HEADER*/
+  .top-menu {
+  background: #000;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  width: 100%;
+  max-height: 100px;
+  text-transform: uppercase;
+  }
+
+  .top-menu:after {
+  content: "";
+  display: table;
+  clear: both;
+  }
+
+  .navbar-logo {
+    display: inline-block;
+  }
+  .menu-main {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  }
+  .menu-main li {
+    display: inline-block;
+  }
+
+  .menu-main a {
+  text-decoration: none;
+  line-height: 61px;
+  padding-right: 20px;
+  padding-left: 20px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #fff;
+  }
+
+
+  .menu-main a:hover {
+    color: #217cd7;
+  }
+
+
+  nav li:not(:first-child):before {
+    color: #fff;
+    content: " | ";
+  }
+
+  .picture_nav {
+    display: none;
+    }
+
+    /*MAIN*/
+.sls {
+    text-align: center;
+    color: #000;
+    margin: 3% auto;
+    }
+
+
+
+
+
+
+.container {
+  position: relative;
+  margin: 5% auto;
+  border: 1px solid #217cd7;
+  width:70%;
+  max-width: 850px;
+  max-height: 70%;
+  background-color: #fff;
+}
+
+.container-header {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 50%;
+  margin-left: 40px;
+  transform: translateY(-50%);
+}
+
+.container-header-text {
+  text-transform: uppercase;
+  background-color: #217cd7;
+  padding-top: 20px;
+  padding-right: 30px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  color: #fff;
+}
+
+.container-content {
+  display: flex;
+}
+
+.container-content .form {
+    padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-content .form-input, .container-content .form-textarea {
+  width: 90%;
+  padding: 15px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  outline: none;
+  background-color: #f7f7f7;
+  border: 1px solid #217cd7;
+  border-radius: 15px;
+}
+.container-content .form-textarea {
+  height: 140px;
+  resize: vertical;
+  font-size: 16px;
+}
+
+.container-content .form-submit {
+  padding: 10px;
+  background-color: #fff;
+  border: 1.5px solid #000;
+  font-weight: bold;
+  text-transform: uppercase;
+  outline: none;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.container-content .form-submit:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.container-content .form, .container-content .description {
+  flex: 1;
+  margin-top: 5%;
+}
+
+
+.my_btn {
+    display: block;
+    margin: 0 auto;
+    width: 40%;
+    max-width: 350px;
+    height: 60px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    border: 2px solid #217cd7;
+    font-weight: bold;
+    background-color: #217cd7;
+}
+
+.my_btn:hover {
+    background-color: #1a70c5;;
+}
+
+
+  /*FOOTER*/
+  footer {
+    background: #000;
+    display: block;
+    justify-content: space-between;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    width: 100%;
+    max-height: 130px;
+    }
+
+    footer p {
+      color: white;
+      margin-left: 3%;
+      text-align: center;
+    }
+
+    .github {
+      float: right;
+      margin-right: 1%;
+      font-size: 40px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+
+/*MEDIA*/
+@media (max-width: 915px) {
+
+  .text_nav {
+  display: none;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  .menu-main {
+    width: 100%;;
+  }
+
+  .menu-main {
+  display: flex;
+  }
+
+
+
+  .menu-main li {
+  display: table;
+  margin: auto;
+  }
+
+  .menu-main a .picture_nav {
+  display: block;
+  text-align: right;
+  width: 100%;
+  }
+
+  .picture_nav {
+  display: inline;
+
+  }
+
+  nav li:not(:first-child):before {
+  color: #fff;
+  content: "";
+  }
+
+  .form-input, .form-textarea {
+      font-size: 12px;
+  }
+
+
+  .container-header {
+    display: none;
+  }
+
+  footer p {
+    font-size: 11px;
+  }
+
+  .github {
+    font-size: 25px;
+  }
+
+
+
+  }
+
+  @media (max-width: 400px) {
+
+    .sls {
+        margin-top: 25%;
+    }
+
+    .header {
+        left: 0; right:0; top: 0;
+    }
+
+    .menu-main a {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+  footer {
+    max-height: 100%;
+  }
+  footer p {
+    font-size: 10px;
+  }
+
+  .github {
+    font-size: 15px;
+  }
+  }
+
+.form_area {
+width:100%;
+text-align:center;
+}

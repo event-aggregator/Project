@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html land=>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        {% load static %}
+        <title>FAQ - Агрегатор мероприятий</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="{% static 'mainApp/faq.css' %}">
+    </head>
+
+    <body>
+        <div class="header">
+            <nav class="top-menu">
+                    <a class="navbar-logo" href=""><img src=""></a>
+                    <ul class="menu-main">
+                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-home"></i> </a> <a class="text_nav" href="/success"> Главная </a></li>
+                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-user-circle"></i> </a> <a class="text_nav" href="/user_page"> Мой профиль  </a></li>
+                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-calendar"></i> </a> <a class="text_nav" href="/swipe"> Агрегатор  </a></li>
+                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-question"></i> </a> <a class="text_nav" href=""> FAQ  </a></li>
+                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-envelope"></i>  </a> <a class="text_nav" href="/feedback"> Обратная связь</a></li>
+                        <li><a class="picture_nav" href=""><i class="fa fa-fw fa-sign-out"></i>  </a> <a href="/logout" class="logout text_nav" >Выход</a></li>
+                    </ul>
+
+                    </nav>
+        </div>
+        <h1 class="sls"> ВОПРОСЫ И ОТВЕТЫ </h1>
+
+        <div class="main_img_div">
+
+        <img class="main_img" src="https://sun9-30.userapi.com/c857428/v857428628/bfc28/SETABjll3d4.jpg">
+    </div>
+        <div class="container">
+                <ul class="acc">
+                  <li>
+                    <button class="acc_ctrl"><h2>Для кого это приложение?</h2></button>
+                    <div class="acc_panel">
+                      <p class="faq_p">
+                        Агрегатор мероприятий - удобное приложение, разработанное специально для IT разработчиков, чтобы помочь им узнать об
+                        интересных событиях в их сфере деятельности.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <button class="acc_ctrl"><h2>Как пользоваться приложением?</h2></button>
+                    <div class="acc_panel">
+                      <p class="faq_p">Чтобы нам легче было подобрать для вас крутое мероприятие, заполните необходимую информацию о себе в личном кабинете. Так мы узнаем о ваших предпочтениях!</p>
+
+                            <p class="faq_p">Чтобы начать выбор мероприятий, нажмите на кнопку «Агрегатор». Именно он предложит вам 10 различных мероприятий на выбор. Если мероприятие вам понравилось, свайпните вправо. Если нет, свайпните влево.
+                            </p>
+                            <p class="faq_p">После этого вы можете записаться на мероприятия которые вам понравились.
+                            </p>
+                            <p class="faq_p">Если мероприятия вам не подошли, вы можете поискать их самостоятельно на главной странице в строке поиска.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <button class="acc_ctrl"><h2>Что делать, если у меня поменялись интересы?</h2></button>
+                    <div class="acc_panel">
+                      <p class="faq_p">Ничего страшного! Вы можете обновить информацию о себе в своем профиле.</p>
+                    </div>
+                  </li>
+                    <li>
+                    <button class="acc_ctrl"><h2>Как зарегистрироваться на понравившиеся мероприятия?</h2></button>
+                    <div class="acc_panel">
+                      <p class="faq_p">Наша система сохранит мероприятия, которые пришлись вам по душе. После этого вы сразу сможете перейти на страницу регистрации.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+
+            <h2 class="questions">Остались вопросы? <a class="question_link" href="/feedback" >Свяжитесь</a> с нами и мы поможем вам разобраться!</h2>
+
+
+
+        <footer class="cite_footer">
+                <p>Проект выполнен в рамках учебной практики направления «Программирование и информационные технологии» факультета
+                        Прикладной математики — процессов управления Санкт-Петербургского государственного университета.<br>
+                        Головина Светлана, Ермолова Дарья, Лаисцева Милена, Моисеева Вероника, Щелкина Оксана. <br>2019 год.              <a href="https://github.com/event-aggregator" class="github"> <i class="fa fa-fw fa-github"></i> </a>
+
+                </p>
+
+
+            </footer>
+
+        {% block extrahead %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="{% static 'mainApp/faq.js' %}"></script>
+        {% endblock extrahead %}
+        </body>
+
+
+
+
+    </html>

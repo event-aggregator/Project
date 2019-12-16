@@ -1,0 +1,251 @@
+body {
+    margin: 0;
+    background-color: #f7f7f7;
+    font-family: "Segoe UI";
+  }
+
+
+
+
+  /*MENU HEADER*/
+  .top-menu {
+  background: #000;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  width: 100%;
+  max-height: 100px;
+  text-transform: uppercase;
+  }
+
+  .top-menu:after {
+  content: "";
+  display: table;
+  clear: both;
+  }
+
+  .navbar-logo {
+    display: inline-block;
+  }
+  .menu-main {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  }
+  .menu-main li {
+    display: inline-block;
+  }
+
+  .menu-main a {
+  text-decoration: none;
+  line-height: 61px;
+  padding-right: 20px;
+  padding-left: 20px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #fff;
+  }
+
+
+  .menu-main a:hover {
+    color: #19beec;
+  }
+
+
+  nav li:not(:first-child):before {
+    color: #fff;
+    content: " | ";
+  }
+
+
+
+  .picture_nav {
+  display: none;
+  }
+
+
+
+/*MAIN*/
+ .sls {
+    text-align: center;
+    color: #000;
+    margin: 3% auto;
+}
+
+.main_img  {
+    height: 40%;
+    width: 40%;
+    display: block;
+    float: left;
+    min-width: 450px;
+    margin-right: 5%;
+  }
+
+  .main_img_div {
+    width: 70%;
+    display: block;
+    margin-left: 20%;
+
+  }
+  .user_info {
+      margin: 12%;
+      margin-top: 5%;
+      text-transform: uppercase;
+      font-size: 20px;
+  }
+
+  h3:first-child {
+    padding-top: 8%;
+  }
+
+  .db {
+    font-size: 0.9em;
+    color:  #217cd7;
+  }
+
+  .event {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    margin-bottom: 1%;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #217cd7;
+  }
+
+  .event h2 {
+    margin-right: 3%;
+    width: 300px;
+    color: #217cd7;
+  }
+
+  .events {
+    margin-bottom: 3%;
+  }
+
+ /*FOOTER*/
+ footer {
+    background: #000;
+    display: block;
+    justify-content: space-between;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    width: 100%;
+    max-height: 130px;
+    }
+
+    footer p {
+      color: white;
+      margin-left: 3%;
+      text-align: center;
+    }
+
+    .github {
+      float: right;
+      margin-right: 1%;
+      font-size: 40px;
+      color: #fff;
+      text-decoration: none;
+    }
+
+
+/*MEDIA*/
+@media (max-width: 915px) {
+
+  .text_nav {
+  display: none;
+  }
+
+
+  .menu-main {
+    width: 100%;;
+  }
+
+  .menu-main {
+  display: flex;
+  }
+
+
+  .menu-main li {
+  display: table;
+  margin: auto;
+  }
+
+  .menu-main a .picture_nav {
+  display: block;
+  text-align: right;
+  width: 100%;
+  }
+
+  .picture_nav {
+  display: inline;
+
+  }
+
+  nav li:not(:first-child):before {
+  color: #fff;
+  content: "";
+  }
+
+  .main_img {
+    max-height: 50%;
+    max-width: 50%;
+    min-width: 100%;
+    margin-bottom: 5%;
+  }
+
+  .main_img_div {
+      max-width: 100%;
+      background-color: #fff;
+      margin: 5% auto;
+  }
+
+  h3 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  #foo_form {
+      margin-left: 5%;
+  }
+
+  .main_img_div {
+    width: 100%;
+  }
+
+
+  footer p {
+    font-size: 11px;
+  }
+
+  .github {
+    font-size: 25px;
+  }
+
+  }
+
+  @media (max-width: 400px) {
+
+
+    .header {
+      left: 0; right:0; top: 0;
+  }
+
+  .menu-main a {
+      padding-left: 5px;
+      padding-right: 5px;
+  }
+
+  footer {
+    max-height: 100%;
+  }
+  footer p {
+    font-size: 10px;
+  }
+
+  .github {
+    font-size: 15px;
+  }
+  }
